@@ -1,86 +1,126 @@
-body {
+/* ========== GLOBAL STYLES ========== */
+html, body {
+  margin: 0;
+  padding: 0;
   font-family: 'Nunito', sans-serif;
+  min-width: 320px;
+  min-height: 100vh;
+  box-sizing: border-box;
 }
 
-
-.parent{
-    display: flex;
-    justify-content: space-between;
-    width: 100vw;
-    height: 100vh;
+/* ========== LAYOUT ========== */
+.parent {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
- .first-container{
-    background-color: #013B9C;
-    color: white;
-    width: 55%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
- }
- .pera{
-    text-align: center;
-    padding: 1px 15%;
- }
- .second-container{
-    width: 45%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    /* gap: 0.5rem; */
- }
+.first-container {
+  background-color: #013B9C;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 2rem;
+  display: none; 
+}
 
+.second-container {
+  width: 100%;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* ========== TYPOGRAPHY ========== */
 .heading {
-    margin: 0;
-    text-align: center;
+  /* font-size: 1.4rem; */
+  text-align: center;
+  margin: 0;
 }
 
 .pera {
-    margin: 0;
-    text-align: center;
-    padding: 1px 15%;
+  font-size: 1rem;
+  text-align: center;
+  padding: 0 1rem;
+  margin: 1rem 0;
 }
 
+/* ========== FORM ========== */
 .form {
-  background: #fff;
-  padding: 2rem 2.5rem;
-  border-radius: 10px;
-
+  width: 100%;
+  /* padding: 1.5rem; */
   display: flex;
   flex-direction: column;
-  gap: 1.2rem;
+   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
-.form input {
-  padding: 0.8rem 2rem;
-  border: 1px solid #bbb;
-  border-radius: 5px;
+.form input,
+.form button {
+  width: 60%;
+  padding: 0.75rem 1rem;
   font-size: 1rem;
-  outline: none;
-  transition: border 0.2s;
+  border-radius: 6px;
+  border: 1px solid #bbb;
 }
 
 .form input:focus {
-  border: 2px solid #888;
+  border: 2px solid #013B9C;
   background: #eaf1fb;
+  outline: none;
 }
 
 .form button {
-  padding: 0.8rem 1rem;
-  background: #013B9C;
-  color: #fff;
+  background-color: #013B9C;
+  color: white;
   border: none;
-  border-radius: 8px;
-  font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s;
 }
 
 .form button:hover {
-  background: #0056d6;
+  background-color: #0056d6;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablets and up */
+@media (min-width: 768px) {
+  .parent {
+    flex-direction: row;
+  }
+
+  .first-container {
+    display: flex;
+    width: 55%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .second-container {
+    width: 45%;
+    justify-content: center;
+  }
+}
+
+/* Larger screens */
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .pera {
+    font-size: 1.1rem;
+  }
+
+  .form input,
+  .form button {
+    font-size: 1.1rem;
+  }
 }
