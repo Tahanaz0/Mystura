@@ -4,6 +4,8 @@ import "./login.css";
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberMe, setRememberMe] = useState(false);
+
   const [errors, setErrors] = useState({
     username: false,
     password: false,
@@ -41,6 +43,7 @@ export default function Login() {
             lifestyle services with Mystura.
           </p>
           <input
+            className="input1"
             type="text"
             placeholder="Username"
             value={username}
@@ -55,6 +58,7 @@ export default function Login() {
             </p>
           )}
           <input
+            className="input1"
             type="password"
             placeholder="Password"
             value={password}
@@ -68,6 +72,15 @@ export default function Login() {
               Password is required
             </p>
           )}
+          {/* <div className="remember-me">
+            <input
+              type="checkbox"
+              id="remember"
+              checked={rememberMe}
+              onChange={(e) => setRememberMe(e.target.checked)}
+            />
+            <label htmlFor="remember">Remember Me</label>
+          </div> */}
 
           <button type="submit">Login</button>
         </form>

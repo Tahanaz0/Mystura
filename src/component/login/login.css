@@ -1,4 +1,4 @@
-/* ========== GLOBAL STYLES ========== */
+
 html, body {
   margin: 0;
   padding: 0;
@@ -8,7 +8,6 @@ html, body {
   box-sizing: border-box;
 }
 
-/* ========== LAYOUT ========== */
 .parent {
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@ html, body {
   justify-content: flex-start;
 }
 
-/* ========== TYPOGRAPHY ========== */
+
 .heading {
   /* font-size: 1.4rem; */
   text-align: center;
@@ -48,7 +47,6 @@ html, body {
   margin: 1rem 0;
 }
 
-/* ========== FORM ========== */
 .form {
   width: 100%;
   /* padding: 1.5rem; */
@@ -87,8 +85,30 @@ html, body {
 .form button:hover {
   background-color: #0056d6;
 }
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  font-size: 0.95rem;
+  color: #333;
+}
 
-/* ========== MEDIA QUERIES ========== */
+@media (min-width:375px){
+  .form input,
+  .form button {
+    font-size: 1.1rem;
+    width: 85%;
+  }
+}
+@media (min-width:320px){
+  .form input,
+  .form button {
+    font-size: 1.1rem;
+    width: 85%;
+  }
+
+}
 
 /* Tablets and up */
 @media (min-width: 768px) {
@@ -109,7 +129,6 @@ html, body {
   }
 }
 
-/* Larger screens */
 @media (min-width: 1024px) {
   .heading {
     font-size: 2rem;
