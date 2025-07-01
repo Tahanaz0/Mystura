@@ -1,0 +1,143 @@
+.side-bar-main-container{
+   width: 20%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   
+}
+.side-bar-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #013B9C;
+    /* margin-top: 20px; */
+}
+
+.side-bar-logo{
+    width: 100px;
+}
+.side-bar-heading{
+    font-size: 35px;
+    font-weight: 600;
+    margin: 0;
+}
+.side-bar-pera{
+    font-size: 12px;
+    margin: 0;
+    font-weight: 400;
+}
+
+.side-bar-list {
+  list-style: none;
+  padding: 0;
+  /* margin-top: 40px; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-bar-list-item {
+  padding: 12px 20px;
+  font-size: 15px;
+  color: #b0b0b0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  transition: background 0.2s, color 0.2s;
+  width: 170px;
+  justify-content: center;
+}
+
+.side-bar-list-icon {
+  margin-right: 12px;
+  font-size: 22px;
+  color: #b0b0b0;
+  transition: color 0.2s;
+}
+
+.side-bar-list-item.active,
+.side-bar-list-item:hover {
+
+  /* color: #013B9C; */
+  font-weight: 600;
+}
+
+
+.side-bar-list-item:hover .side-bar-list-icon {
+  color: #013B9C;
+}
+
+.side-bar-list-item a {
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.side-bar-logout {
+  position: absolute;
+  bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-bar-logout .side-bar-list-item {
+  color: #b0b0b0;
+}
+
+.side-bar-logout-item {
+  padding: 12px 20px;
+  font-size: 18px;
+  color: #b0b0b0;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+  gap: 10px;
+  width: 170px;
+  justify-content: center;
+}
+
+.side-bar-logout-item .side-bar-list-icon {
+  margin-right: 12px;
+  font-size: 22px;
+  color: #b0b0b0;
+  transition: color 0.2s;
+}
+
+.side-bar-logout-item.active,
+.side-bar-logout-item:hover {
+  background: #e0f7fa;
+  color: #013B9C;
+  font-weight: 600;
+}
+
+.side-bar-logout-item.active .side-bar-list-icon,
+.side-bar-logout-item:hover .side-bar-list-icon {
+  color: #013B9C;
+}
+
+.side-bar-icon-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 24px;
+  margin-right: 16px;
+}
+
+.side-bar-text-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}

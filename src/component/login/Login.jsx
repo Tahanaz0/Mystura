@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./login.css";
-
+import { useNavigate } from 'react-router-dom';
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
-
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({
     username: false,
     password: false,
@@ -24,7 +24,7 @@ export default function Login() {
     if (newErrors.username || newErrors.password) {
       return;
     }
-    alert(`Welcome, ${username}`);
+    navigate('/dashboard');
   };
 
   return (
