@@ -42,6 +42,7 @@ export default function Login() {
             Enter your login details to continue exploring smart home &
             lifestyle services with Mystura.
           </p>
+          <div>
           <input
             className="input1"
             type="text"
@@ -53,10 +54,12 @@ export default function Login() {
             }}
           />
           {errors.username && (
-            <p style={{ color: "red", fontSize: "0.85rem" }}>
+            <p style={{ color: "red", fontSize: "0.85rem", margin:'0px' }}>
               Username is required
             </p>
           )}
+          </div>
+          <div>
           <input
             className="input1"
             type="password"
@@ -68,10 +71,11 @@ export default function Login() {
             }}
           />
           {errors.password && (
-            <p style={{ color: "red", fontSize: "0.85rem" }}>
+            <p style={{ color: "red", fontSize: "0.85rem",margin:'0px' }}>
               Password is required
             </p>
           )}
+          </div>
           <div className="remember-me">
             <div>
               <input
