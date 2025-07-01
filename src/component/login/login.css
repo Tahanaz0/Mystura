@@ -49,12 +49,10 @@ body {
 
 .form {
   width: 85%;
-  /* padding: 1.5rem; */
   display: flex;
   flex-direction: column;
   flex-direction: column;
   justify-content: center;
-  /* align-items: center; */
   gap: 1rem;
 }
 
@@ -87,7 +85,6 @@ body {
 }
 .remember-me {
   display: flex;
-
   gap: 10px;
   margin: 2px 0;
   font-size: 0.95rem;
