@@ -72,15 +72,21 @@ export default function Login() {
               Password is required
             </p>
           )}
-          {/* <div className="remember-me">
-            <input
-              type="checkbox"
-              id="remember"
-              checked={rememberMe}
-              onChange={(e) => setRememberMe(e.target.checked)}
-            />
-            <label htmlFor="remember">Remember Me</label>
-          </div> */}
+          <div className="remember-me">
+            <div>
+              <input
+                type="checkbox"
+                id="remember"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+              />
+            </div>
+            <div>
+              <label htmlFor="remember" className="remember">
+                Remember Me
+              </label>
+            </div>
+          </div>
 
           <button type="submit">Login</button>
         </form>
