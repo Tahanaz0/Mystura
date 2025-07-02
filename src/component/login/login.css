@@ -85,8 +85,8 @@ body {
 }
 .remember-me {
   display: flex;
-  gap: 10px;
-  margin: 2px 0;
+  gap: 5px;
+  margin: 0 0;
   font-size: 0.95rem;
   color: #333;
   width: 55%;
