@@ -1,6 +1,14 @@
+.menu-icon {
+  display: none;
+  position: relative;
+  z-index: 3000;
+}
+
 @media screen and (max-width: 768px) {
   .menu-icon {
     display: block;
+    font-size: 28px;
+    cursor: pointer;
   }
   .menu-box-overlay {
     align-items: flex-start !important;
@@ -12,13 +20,14 @@
 
 .menu-box-overlay {
   position: fixed;
-  inset: 0;
-  background-color: rgba(0, 0, 0, 0.4);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 2500;
   display: flex;
-  /* justify-content: center; */
-  align-items: center;
- 
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 .menu-box {
@@ -114,6 +123,7 @@ left: 250px;
   background-color: white;
   border-bottom: 1px solid #E6EFF5;
   padding: 20px;
+  height: 80px;
 }
 
 .header-inner-container h2 {
@@ -324,4 +334,11 @@ left: 250px;
   .search-wrapper {
     margin-bottom: 8px !important;
   }
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
 }

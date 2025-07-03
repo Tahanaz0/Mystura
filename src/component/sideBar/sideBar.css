@@ -49,7 +49,8 @@
   font-weight: 400;
   transition: background 0.2s, color 0.2s;
   width: 170px;
-  justify-content: center;
+  gap: 10px;
+  /* justify-content: center; */
 }
 
 .side-bar-list-icon {
@@ -141,3 +142,16 @@
   flex-direction: column;
   align-items: flex-start;
 }
+
+@media screen and (max-width: 425px) {
+  .side-bar-main-container {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .side-bar-main-container {
+    display: none;
+  }
+}
+

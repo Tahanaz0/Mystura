@@ -3,7 +3,7 @@ import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router";
-// import SideBarMenu from "./SideBarMenu";
+import SideBarMenu from "./SideBarMenu";
 import { colors } from "@mui/material";
 
 const Header = () => {
@@ -12,16 +12,20 @@ const Header = () => {
   const getHeading = (path) => {
     switch (path) {
       case "/":
-        return "Home";
+      case "/dashboard":
+        return "Dashboard";
+      case "/category":
+        return "Categories";
       case "/user":
         return "Users";
-      case "/property":
-        return "Property Management";
-      case "/support":
-        return "Support";
-
+      case "/booking":
+        return "Bookings";
+      case "/services":
+        return "Services";
+      case "/settings":
+        return "Settings";
       default:
-        return "Report";
+        return "";
     }
   };
 
@@ -31,7 +35,7 @@ const Header = () => {
       <div className="header-container">
         <div className="header-inner-container">
           <div className="icon">
-            {/* <SideBarMenu /> */}
+            <SideBarMenu />
             <h2>{heading}</h2>
           </div>
           <div className="text">
