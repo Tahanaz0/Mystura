@@ -3,7 +3,8 @@ import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router";
-import SideBarMenu from "./SideBarMenu";
+import SmallBoxMenu from "./SideBarMenu";
+import { IoIosNotificationsOutline } from "react-icons/io";
 import { colors } from "@mui/material";
 
 const Header = () => {
@@ -35,7 +36,7 @@ const Header = () => {
       <div className="header-container">
         <div className="header-inner-container">
           <div className="icon">
-            <SideBarMenu />
+            <SmallBoxMenu />
             <h2>{heading}</h2>
           </div>
           <div className="text">
@@ -45,7 +46,7 @@ const Header = () => {
               <style>
                 {`
                   .custom-input::placeholder {
-                   color: #008080;
+                   color: #8BA3CB;
                    }
                 `}
               </style>
@@ -56,15 +57,16 @@ const Header = () => {
                 className="custom-input"
                 style={{
                   backgroundColor: "#f2f2f2",
-                  color: "black",
+                  color: "#8BA3CB",
                   // border: "1px solid \",
-                  outline: "none",
+                  outline: "1px solid  #F5F7FA",
                   borderRadius: "5px",
                 }}
               />
             </div>
+            <IoIosNotificationsOutline />
 
-            <img className="avator" src="/images/avator.svg" alt="" />
+            <img className="avator" src="/image/profile.png" alt="" />
           </div>
         </div>
       </div>

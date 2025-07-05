@@ -129,6 +129,16 @@
   color: #013B9C;
 }
 
+.side-bar-logout-item:hover {
+  background: #ffeaea;
+  color: #d32f2f;
+  font-weight: 600;
+}
+
+.side-bar-logout-item:hover .side-bar-list-icon {
+  color: #d32f2f;
+}
+
 .side-bar-icon-col {
   display: flex;
   flex-direction: column;

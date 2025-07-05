@@ -11,7 +11,9 @@ function LayoutWithHeaderSidebar({ children }) {
       <Header />
       <div style={{ display: 'flex' }}>
         <SideBar />
-        {children}
+        <div className="main-content">
+          {children}
+        </div>
       </div>
     </>
   );
