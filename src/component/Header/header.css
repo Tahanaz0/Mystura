@@ -71,7 +71,11 @@
   flex-basis: 200;
 
 }
-
+@media (min-width:320px){
+  item2{
+    display: none;
+  }
+}
 
 .close-btn {
   cursor: pointer;
@@ -116,6 +120,7 @@ left: 250px;
   z-index: 1000;
   margin-left: 280px;
   width: 100%;
+  position: fixed;
 
 }
 
@@ -346,4 +351,10 @@ left: 250px;
   align-items: center;
   gap: 20px;
   height: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .item2 {
+    display: none;
+  }
 }

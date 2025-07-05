@@ -1,10 +1,11 @@
 import React from "react";
-
+import './dashboard.css'
 const Dashboard = () => {
   return (
     <>
-      <h2>Dashboard Page</h2>
-      {/* Yahan apna user page ka content daalein */}
+      <div className="dash-container">
+        dashboard
+      </div>
     </>
   );
 };

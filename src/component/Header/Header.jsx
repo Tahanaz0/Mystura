@@ -63,7 +63,7 @@ const Header = () => {
                 }}
               />
             </div>
-            <IoIosNotificationsOutline  className="item"
+            <IoIosNotificationsOutline  className="item item2"
             style={{
               width: "40px",
               height: "20px",

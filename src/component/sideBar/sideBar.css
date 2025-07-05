@@ -165,3 +165,9 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  .side-bar-main-container {
+    display: none;
+  }
+}
+
