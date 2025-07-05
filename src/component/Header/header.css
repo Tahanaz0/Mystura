@@ -66,7 +66,11 @@
   margin: 0 auto;
   margin-top: 20px;
 }
+.text .item{
+  flex-grow: 1;
+  flex-basis: 200;
 
+}
 
 
 .close-btn {
@@ -108,13 +112,7 @@ left: 250px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   animation: slideFromTopLeft 0.35s ease-out;
 }
-
-
-
-
-
 .header-container {
-  position: fixed;
   z-index: 1000;
   margin-left: 280px;
   width: 100%;

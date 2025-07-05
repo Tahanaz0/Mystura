@@ -40,7 +40,7 @@ const Header = () => {
             <h2>{heading}</h2>
           </div>
           <div className="text">
-            <div className="search-wrapper">
+            <div className="search-wrapper item">
               <FontAwesomeIcon icon={faSearch} className="search-icon" />
 
               <style>
@@ -54,19 +54,23 @@ const Header = () => {
               <input
                 type="text"
                 placeholder="Search for something....."
-                className="custom-input"
+                className="custom-input item"
                 style={{
                   backgroundColor: "#f2f2f2",
                   color: "#8BA3CB",
-                  // border: "1px solid \",
                   outline: "1px solid  #F5F7FA",
                   borderRadius: "5px",
                 }}
               />
             </div>
-            <IoIosNotificationsOutline />
+            <IoIosNotificationsOutline  className="item"
+            style={{
+              width: "40px",
+              height: "20px",
+              cursor: "pointer",
+            }} />
 
-            <img className="avator" src="/image/profile.png" alt="" />
+            <img className="avator item" src="/image/profile.png" alt="" />
           </div>
         </div>
       </div>

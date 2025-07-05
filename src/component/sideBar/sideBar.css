@@ -2,20 +2,21 @@
    width: 20%;
    display: flex;
    flex-direction: column;
-   align-items: center;
+   /* align-items: center; */
    
 }
 .side-bar-container{
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     color: #013B9C;
     /* margin-top: 20px; */
 }
 
 .side-bar-logo{
     width: 100px;
+    margin: 0;
 }
 .side-bar-heading{
     font-size: 35px;
@@ -82,7 +83,6 @@
 }
 
 .side-bar-logout {
-  position: absolute;
   bottom: 30px;
   width: 100%;
   display: flex;

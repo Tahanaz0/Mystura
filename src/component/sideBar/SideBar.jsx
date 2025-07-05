@@ -10,7 +10,7 @@ import { MdOutlineSettings, MdOutlineLogout } from "react-icons/md";
 
 const Sidebar = () => {
   return (
-    <div className="side-bar-main-container" style={{ position: 'relative', minHeight: '100vh' }}>
+    <div className="side-bar-main-container">
       <div className="side-bar-container">
         <img src="/image/icon1.png" alt="Logo" className="side-bar-logo" />
         <h1 className="side-bar-heading">MYSTURA</h1>
