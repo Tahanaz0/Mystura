@@ -358,3 +358,29 @@ left: 250px;
     display: none;
   }
 }
+
+@media screen and (max-width: 320px) {
+  .search-wrapper {
+    width: 120px !important;
+  }
+  .custom-input {
+    font-size: 12px !important;
+    padding: 4px 0px 4px 24px !important;
+  }
+  .custom-input::placeholder {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .search-wrapper {
+    width: 150px !important;
+  }
+  .custom-input {
+    font-size: 14px !important;
+    padding: 6px 0px 6px 28px !important;
+  }
+  .custom-input::placeholder {
+    font-size: 14px !important;
+  }
+}

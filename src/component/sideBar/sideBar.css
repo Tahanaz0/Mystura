@@ -1,5 +1,5 @@
 .side-bar-main-container{
-   width: 20%;
+   width: 30%;
    display: flex;
    flex-direction: column;
    /* align-items: center; */
@@ -9,8 +9,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     color: #013B9C;
+    
     /* margin-top: 20px; */
 }
 
