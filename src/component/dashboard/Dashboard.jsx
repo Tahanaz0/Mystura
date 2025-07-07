@@ -2,7 +2,9 @@ import React from "react";
 import { BsBriefcase } from "react-icons/bs";
 import { CiMoneyBill } from "react-icons/ci";
 import { FaRegUser } from "react-icons/fa6";
-import './dashboard.css'
+import './dashboard.css';
+import Barchart from '../barChart/barchart'
+// import { BarChart } from "recharts";
 const Dashboard = () => {
     return (
         <>
@@ -36,6 +38,13 @@ const Dashboard = () => {
                         </div>
                         <h2>18</h2>
                     </div>
+                </div>
+                <div>
+                  <Barchart/>  
+                </div>
+                
+                <div className="w-100px">
+                    next bar
                 </div>
             </div>
         </>
