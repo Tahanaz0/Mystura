@@ -66,11 +66,7 @@
   margin: 0 auto;
   margin-top: 20px;
 }
-.text .item{
-  flex-grow: 1;
-  flex-basis: 200;
 
-}
 @media (min-width:320px){
   item2{
     display: none;
@@ -80,9 +76,6 @@
 .close-btn {
   cursor: pointer;
   font-size: 20px;
-  /* position: fixed;
-left: 250px;
-  top: 100px; */
 }
 .box-content{
   margin-top: 40px;
@@ -117,7 +110,7 @@ left: 250px;
   animation: slideFromTopLeft 0.35s ease-out;
 }
 .header-container {
-  z-index: 1000;
+  /* z-index: 1000; */
   margin-left: 280px;
   width: 100%;
   position: fixed;
@@ -130,7 +123,7 @@ left: 250px;
   justify-content: space-between;
   background-color: white;
   border-bottom: 1px solid #E6EFF5;
-  padding: 20px;
+  /* padding: 20px; */
   height: 80px;
 }
 
@@ -142,18 +135,10 @@ left: 250px;
 .text {
   display: flex;
   align-items: center;
-  gap: 17px;
+  gap: 5px;
   margin-right: 300px;
 }
 
-.bell {
-  width: 35px;
-}
-
-.search-wrapper {
-  position: relative;
-  width: fit-content;
-}
 
 .text input {
   width: 260px;
