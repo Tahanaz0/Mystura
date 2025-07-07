@@ -1,5 +1,5 @@
 .side-bar-main-container{
-   width: 25%;
+   width: 20%;
    display: flex;
    flex-direction: column;
    /* align-items: center; */
@@ -11,6 +11,7 @@
     align-items: center;
     justify-content: center;
     color: #013B9C;
+    padding: 10px;
     
     /* margin-top: 20px; */
 }
@@ -20,12 +21,12 @@
     margin: 0;
 }
 .side-bar-heading{
-    font-size: 40px;
+    font-size: 35px;
     font-weight: 600;
     margin: 0;
 }
 .side-bar-pera{
-    font-size: 12px;
+    font-size: 10px;
     margin: 0;
     font-weight: 400;
 }
@@ -169,6 +170,12 @@
 @media screen and (max-width: 320px) {
   .side-bar-main-container {
     display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .side-bar-main-container {
+    display: none !important;
   }
 }
 
