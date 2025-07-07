@@ -104,6 +104,10 @@ body {
     font-size: 1.1rem;
     width: 95%;
   }
+  .heading {
+    font-size: 1.5rem;
+    font-style: bold;
+  }
 }
 @media (min-width: 320px) {
   .form input,
@@ -111,12 +115,20 @@ body {
     font-size: 1.1rem;
     width: 95%;
   }
+  .heading {
+    font-size: 1.5rem;
+    font-style: bold;
+  }
 }
 
 /* Tablets and up */
 @media (min-width: 768px) {
   .parent {
     flex-direction: row;
+  }
+  .heading {
+    font-size: 1.5rem;
+    font-style: bold;
   }
   .first-container {
     display: flex;
@@ -132,6 +144,11 @@ body {
 }
 
 @media (min-width: 1024px) {
+  .heading {
+    font-size: 1.5rem;
+    font-style: bold;
+  }
+
   .pera {
     font-size: 1.1rem;
   }

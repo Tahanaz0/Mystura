@@ -41,15 +41,14 @@
   background-color: white;
   width: 80%;
   max-width: 300px;
-  margin-top:160px;
-  height: 100vh; /* Full screen height */
+  margin-top: 0 !important;
+  top: 0 !important;
+  height: 100vh;
   padding: 20px;
- 
-  /* border-radius: 10px; */
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   animation: slideFromTopLeft 0.35s ease-out;
-  overflow-y: auto; /* Enables scroll inside */
+  overflow-y: auto;
   box-sizing: border-box;
 }
 
