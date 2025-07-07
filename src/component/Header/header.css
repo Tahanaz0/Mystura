@@ -45,10 +45,12 @@
   top: 0 !important;
   height: 100vh;
   padding: 20px;
+ 
+  /* border-radius: 10px; */
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   animation: slideFromTopLeft 0.35s ease-out;
-  overflow-y: auto;
+  overflow-y: auto; /* Enables scroll inside */
   box-sizing: border-box;
 }
 
@@ -129,7 +131,7 @@
 @media screen and (min-width: 1600px) {
   .header-container {
     max-width: 1400px;
-    margin-left: auto;
+    margin-left: 19%;
     margin-right: auto;
     left: 0;
     right: 0;
@@ -140,6 +142,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 96%;
   flex-wrap: wrap;
   overflow: visible;
 }
@@ -152,16 +155,17 @@
 .text {
   display: flex;
   align-items: center;
-  gap: 17px;
+  justify-content: flex-end;
+  gap: 15px;
+  flex: 1 1 auto;
   min-width: 0;
-  flex-shrink: 1;
-  max-width: 100%;
   overflow: visible;
 }
 
-.avator {
+/* .avator {
   flex-shrink: 0;
-}
+  margin-left: 8px;
+} */
 
 @media screen and (max-width: 900px) {
   .text {
@@ -174,7 +178,7 @@
 
 .text input {
   width: 250px;
-  padding: 8px 0px 8px 40px;
+  padding: 8px 0px 8px 30px;
   font-size: 15px;
   background-color: #DDDDDD;
   color: var(--blue);
@@ -385,6 +389,7 @@
   margin: 0;
   font-size: 30px;
   color: #343C6A;
+
 }
 @media (max-width: 900px) {
   .icon h2 {
