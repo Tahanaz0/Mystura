@@ -31,7 +31,7 @@ export default function Login() {
     <div className="parent">
       <div className="first-container">
         <img src="/image/icon1.png" alt="Logo" />
-        <h1 className="heading">MYSTURA</h1>
+        <h1 className="heading1">MYSTURA</h1>
         <p className="pera">FOR THE PEOPLE BY THE PEOPLE</p>
       </div>
 
