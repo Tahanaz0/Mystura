@@ -113,7 +113,7 @@
 }
 .header-container {
   z-index: 1000;
-  margin-left: 250px; /* sidebar width ke barabar, pehle 280px tha */
+  margin-left: 250px; 
   width: calc(100% - 250px);
   position: fixed;
   padding: 15px;
@@ -428,16 +428,18 @@
   }
 }
 
-input[type='text'], .custom-input {
+/* Only target .custom-input, not all input[type='text'] */
+.custom-input {
   border: none !important;
   border-bottom: none !important;
   background: none !important;
   box-shadow: none !important;
 }
-input[type='text']::after, input[type='text']::before, .custom-input::after, .custom-input::before {
+.custom-input::after, .custom-input::before {
   display: none !important;
   border: none !important;
   background: none !important;
   box-shadow: none !important;
   content: none !important;
 }
+/* input[type='text'] selector removed to avoid affecting login page */
