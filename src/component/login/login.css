@@ -19,14 +19,14 @@ body {
   color: white;
   display: flex;
   flex-direction: column;
-  width: 100%;
+  /* width: 100%; */
   padding: 2rem;
   display: none;
   font-family: "Nunito", sans-serif;
 }
 
 .second-container {
-  width: 90%;
+  /* width: 90%; */
   padding: 1.5rem 1rem;
   display: flex;
   flex-direction: column;
