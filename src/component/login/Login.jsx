@@ -54,6 +54,9 @@ export default function Login() {
             style={{
               border: errors.username ? "2px solid red" : "1px solid #bbb",
             }}
+            name="username"
+            id="username"
+            autoComplete="username"
           />
           {errors.username && (
             <p style={{ color: "red", fontSize: "0.85rem", margin:'0px' }}>
@@ -71,6 +74,9 @@ export default function Login() {
             style={{
               border: errors.password ? "2px solid red" : "1px solid #bbb",
             }}
+            name="password"
+            id="password"
+            autoComplete="current-password"
           />
           {errors.password && (
             <p style={{ color: "red", fontSize: "0.85rem",margin:'0px' }}>
