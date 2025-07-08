@@ -36,12 +36,14 @@ export default function Login() {
       </div>
 
       <div className="second-container">
-        <form className="form" onSubmit={handleSubmit}>
-          <h2 className="heading">Welcome Back to Home MYSTURA</h2>
-          <p className="pera">
+        <h2 className="heading">Welcome Back to Home MYSTURA</h2>
+          <p className="pera"> 
             Enter your login details to continue exploring smart home &
             lifestyle services with Mystura.
           </p>
+        <form className="form" onSubmit={handleSubmit}>
+          
+           
           <div>
           <input
             className="input1"
