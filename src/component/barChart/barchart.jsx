@@ -56,7 +56,7 @@ const Barchart = () => {
                     </ResponsiveContainer>
                 </div>
                 <div style={{ width: '96%', height: 300 }}>
-                    <h3 style={{ fontWeight: "600" }}>Total Booking</h3>
+                    <h2>Total Booking</h2>
 
                     <ResponsiveContainer width="100%" height={250}>
                         <AreaChart
