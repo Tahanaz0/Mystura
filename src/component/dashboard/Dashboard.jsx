@@ -43,9 +43,6 @@ const Dashboard = () => {
                   <Barchart/>  
                 </div>
                 
-                <div className="w-100px">
-                    next bar
-                </div>
             </div>
         </>
     );

@@ -113,6 +113,7 @@
   animation: slideFromTopLeft 0.35s ease-out;
 }
 .header-container {
+  background: white;
   z-index: 1000;
   margin-left: 250px; 
   width: calc(100% - 250px);

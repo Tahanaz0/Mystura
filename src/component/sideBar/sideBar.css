@@ -50,6 +50,7 @@
   display: flex;
   align-items: center;
   font-weight: 400;
+  text-decoration: none;
   transition: background 0.2s, color 0.2s;
   width: 170px;
   gap: 10px;
@@ -67,6 +68,7 @@
 .side-bar-list-item:hover {
 
   /* color: #013B9C; */
+  color: #013B9C;
   font-weight: 600;
 }
 
