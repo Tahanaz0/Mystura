@@ -3,6 +3,8 @@
     width: 100%;
     padding: 15px;
     margin-left: 25%;
+    font-family: "Nunito", sans-serif;
+
     /* margin-left: 1px; */
 }
 .boxes {
@@ -43,4 +45,19 @@
     height: 28px;
     border-radius: 5px;
     padding: 3px;
+}
+@media (max-width:375px){
+    .dash-container{
+        margin-left: 0;
+    }
+}
+@media (max-width:768px){
+    .dash-container{
+        margin-left: 0;
+    }
+}
+@media (min-width:1440px){
+    .dash-container{
+        margin-left: 25%;
+    }
 }

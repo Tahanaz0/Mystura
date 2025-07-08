@@ -113,12 +113,16 @@
   animation: slideFromTopLeft 0.35s ease-out;
 }
 .header-container {
-  background: white;
+  background:white;
   z-index: 1000;
-  margin-left: 250px; 
+  margin-left: 235px; 
   width: calc(100% - 250px);
   position: fixed;
   padding: 15px;
+  top: 0;
+  font-family: "Nunito", sans-serif;
+
+
   
 }
 
@@ -135,6 +139,7 @@
     margin-left: 19%;
     margin-right: auto;
     left: 0;
+    top: 0;
     right: 0;
   }
 }
@@ -143,9 +148,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 96%;
+  width: 86%;
   flex-wrap: wrap;
   overflow: visible;
+  
 }
 
 .header-inner-container h2 {
@@ -191,7 +197,7 @@
   background-color: #f2f2f2;
   color: black;
   outline: none;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 .search-wrapper {

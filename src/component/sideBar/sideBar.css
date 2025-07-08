@@ -5,10 +5,12 @@
    position: fixed;
    top: 0;
    left: 0;
-   height: 100vh;      /* Puri screen ki height */
-   width: 250px;       /* Apne sidebar ki width ke hisaab se */
-   background: white;  /* Ya jo bhi aapka sidebar ka background ho */
+   height: 100vh;      
+   width: 260px;       
+   background: white;  
    z-index: 1200;
+   font-family: "Nunito", sans-serif;
+
    /* align-items: center; */
    
 }
