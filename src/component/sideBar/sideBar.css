@@ -2,6 +2,13 @@
    width: 20%;
    display: flex;
    flex-direction: column;
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100vh;      /* Puri screen ki height */
+   width: 250px;       /* Apne sidebar ki width ke hisaab se */
+   background: white;  /* Ya jo bhi aapka sidebar ka background ho */
+   z-index: 1200;
    /* align-items: center; */
    
 }

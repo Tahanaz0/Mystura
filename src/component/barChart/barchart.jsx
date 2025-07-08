@@ -39,7 +39,7 @@ const Barchart = () => {
         <>
             <div>
                 <h2>Total Income</h2>
-                <div style={{ width: "100%", height: 250 }}>
+                <div style={{ width: "96%", height: 250 }}>
                     <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={data} barSize={10} barGap={10} barCategoryGap={15}>
 
@@ -55,7 +55,7 @@ const Barchart = () => {
                         </BarChart>
                     </ResponsiveContainer>
                 </div>
-                <div style={{ width: '100%', height: 300 }}>
+                <div style={{ width: '96%', height: 300 }}>
                     <h3 style={{ fontWeight: "600" }}>Total Booking</h3>
 
                     <ResponsiveContainer width="100%" height={250}>
