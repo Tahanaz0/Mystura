@@ -96,11 +96,13 @@
 }
 
 .side-bar-logout {
-  bottom: 30px;
+  /* bottom: 30px; */
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
+  margin-top: 25%;
+  /* margin-right: 20%; */
 }
 
 .side-bar-logout .side-bar-list-item {
@@ -187,6 +189,11 @@
 @media screen and (max-width: 900px) {
   .side-bar-main-container {
     display: none !important;
+  }
+}
+@media (max-width:2560px){
+  .side-bar-main-container{
+    width: 19%;
   }
 }
 

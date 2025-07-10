@@ -2,8 +2,8 @@
     margin-top: 90px;
     width: 100%;
     padding: 15px;
-    margin-left: 25%;
     font-family: "Nunito", sans-serif;
+    overflow: hidden;
 
     /* margin-left: 1px; */
 }
@@ -14,6 +14,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    overflow: hidden;
 }
 
 .dash-item {
@@ -51,9 +52,14 @@
         margin-left: 0;
     }
 }
-@media (max-width:768px){
+@media (min-width:768px){
     .dash-container{
         margin-left: 0;
+    }
+}
+@media (min-width:1024px){
+    .dash-container{
+        margin-left: 25%;
     }
 }
 @media (min-width:1440px){
@@ -61,3 +67,9 @@
         margin-left: 25%;
     }
 }
+
+@media (min-width:2560px){
+    .dash-container{
+      margin-left: 50%;
+    }
+  }
