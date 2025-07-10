@@ -188,7 +188,7 @@
   }
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 1440px) {
   .header-container {
     margin-left: 250px;
     width: calc(100% - 250px);
