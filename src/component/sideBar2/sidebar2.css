@@ -1,0 +1,54 @@
+.sideBar-main-container{
+    background-color: blue;
+    width: 20%;
+    margin-top: 0;
+    top: 0;
+    position: fixed;
+}
+.first-container{
+    background-color: aqua;
+    width: 50%;
+    display: flex;
+    margin: 9%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.logo-heading{
+    background-color: rgb(31, 118, 118);
+    padding: 5px;
+    width: 100%;
+}
+.second-container{
+    background-color: blueviolet;
+    width: 62%;
+    display: flex;
+    margin: 9%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.pages{
+    background-color: blueviolet;
+    display: flex;
+    width: 100%;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+}
+.logo-page{
+    background-color: rgba(160, 235, 133, 0.952);
+    padding: 5px;
+    width: 100%;
+    height: 20px;
+}
+.third-container{
+    width: 65%;
+    background-color: cadetblue;
+    margin: 9%;
+    margin-top: 20%;
+}

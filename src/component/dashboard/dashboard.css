@@ -1,11 +1,11 @@
 .dash-container{
     margin-top: 90px;
     width: 100%;
-    padding: 15px;
+    /* padding: 15px; */
     font-family: "Nunito", sans-serif;
-    overflow: hidden;
+    /* overflow: hidden; */
 
-    /* margin-left: 1px; */
+    margin-left: 20%;
 }
 .boxes {
     width: 100%;
@@ -18,7 +18,7 @@
 }
 
 .dash-item {
-    width: 180px;
+    width: 18%;
     height: 121px;
     background-color: #cceafd;
     border-radius: 12px;
@@ -47,29 +47,35 @@
     border-radius: 5px;
     padding: 3px;
 }
-@media (max-width:375px){
+@media (max-width: 768px) {
     .dash-container{
+        width: 100%;
         margin-left: 0;
-    }
-}
-@media (min-width:768px){
-    .dash-container{
-        margin-left: 0;
-    }
-}
-@media (min-width:1024px){
-    .dash-container{
-        margin-left: 25%;
-    }
-}
-@media (min-width:1440px){
-    .dash-container{
-        margin-left: 25%;
-    }
-}
-
-@media (min-width:2560px){
-    .dash-container{
-      margin-left: 50%;
     }
   }
+/* @media (m-width:375px){
+    .dash-container{
+        margin-left: 0;
+    }
+} */
+/* @media (min-width:768px){
+    .dash-container{
+        margin-left: 0;
+    }
+} */
+@media (min-width:1024px){
+    /* .dash-container{
+        margin-left: 25%;
+    } */
+}
+@media (min-width:1440px){
+    /* .dash-container{
+        margin-left: 25%;
+    } */
+}
+
+/* @media (min-width:2560px){
+    .dash-container{
+      margin-left: 20%;
+    }
+  } */

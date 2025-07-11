@@ -1,0 +1,22 @@
+.header-container2{
+    background-color: aquamarine;
+    width: 80%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30px;
+    position: fixed;
+    top: 0;
+    padding: 5px;
+}
+.first-container2{
+    width: 10%;
+    background-color: azure;
+    height: 10px;
+}
+.second-container2{
+    width: 20%;
+    background-color: azure;
+    height: 10px;   
+}
