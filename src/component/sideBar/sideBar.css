@@ -181,7 +181,7 @@
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
   .side-bar-main-container {
     display: none !important;
   }
