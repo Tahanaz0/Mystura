@@ -4,6 +4,8 @@
   margin-top: 0;
   top: 0;
   position: fixed;
+  padding: 10px;
+  margin-left: 5px;
    font-family: "Nunito", sans-serif;
 
    /* align-items: center; */
@@ -186,9 +188,9 @@
     display: none !important;
   }
 }
-@media (max-width:2560px){
+/* @media (max-width:2560px){
   .side-bar-main-container{
     width: 19%;
   }
-}
+} */
 
