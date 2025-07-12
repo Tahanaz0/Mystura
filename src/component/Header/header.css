@@ -2,16 +2,16 @@
 
 /* 🔹 Mobile-First Default */
 .header-container {
-  background: white;
-  z-index: 1000;
+  /* background-color: aquamarine; */
   width: 80%;
   margin-left: 20%;
-  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 30px; */
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  transition: margin-left 0.3s ease;
   font-family: "Nunito", sans-serif;
   box-sizing: border-box;
 }
