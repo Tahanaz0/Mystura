@@ -60,6 +60,7 @@ const Sidebar = () => {
           <span className="side-bar-text-col">Logout</span>
         </NavLink>
       </div>
+      
     </div>
   );
 };

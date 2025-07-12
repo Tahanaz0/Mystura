@@ -43,6 +43,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .side-bar-list-item {
@@ -95,8 +96,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
+  align-items: center;
   margin-top: 25%;
+  justify-content: center;
   /* margin-right: 20%; */
 }
 
@@ -106,22 +108,21 @@
 
 .side-bar-logout-item {
   padding: 12px 20px;
-  font-size: 18px;
+  font-size: 15px;
   color: #b0b0b0;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
   font-weight: 400;
-  transition: background 0.2s, color 0.2s;
   text-decoration: none;
-  gap: 10px;
   width: 170px;
-  justify-content: center;
+  gap: 10px;
+  /* Remove justify-content: center for alignment */
 }
 
 .side-bar-logout-item .side-bar-list-icon {
-  margin-right: 12px;
+  /* margin-right: 1px; */
   font-size: 22px;
   color: #b0b0b0;
   transition: color 0.2s;
@@ -151,16 +152,15 @@
 
 .side-bar-icon-col {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-width: 24px;
-  margin-right: 16px;
+  margin-right: 12px;
 }
 
 .side-bar-text-col {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 @media screen and (max-width: 425px) {

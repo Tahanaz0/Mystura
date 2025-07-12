@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: space-between;
   flex-wrap: nowrap;
-  gap: 8px;
+  gap: 5px;
   width: 100%;
   overflow-x: auto;
 }
@@ -29,7 +29,7 @@
 .icon {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0px;
   flex-shrink: 0;
 }
 
@@ -48,13 +48,14 @@
   display: block;
   font-size: 22px;
   cursor: pointer;
+  padding: 5px;
 }
 
 .text {
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* flex: 1 1 auto; */
+  padding-right: 15px;
   gap: 25px;
   min-width: 0;
   flex-wrap: nowrap;
