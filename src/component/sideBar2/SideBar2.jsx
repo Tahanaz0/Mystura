@@ -4,11 +4,11 @@ const SideBar = () => {
     return (
         <>
             <div className="sideBar-main-container">
-                <div className="first-container">
+                <div className="first-container1">
                     <div className="logo-heading"></div>
                     <div className="logo-heading"></div>
                 </div>
-                <div className="second-container">
+                <div className="second-container1">
                     <div className="pages">
                         <div className="logo-page"></div>
                         <div className="logo-page"></div>

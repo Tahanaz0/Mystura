@@ -5,7 +5,7 @@
     top: 0;
     position: fixed;
 }
-.first-container{
+.first-container1{
     background-color: aqua;
     width: 50%;
     display: flex;
@@ -20,11 +20,12 @@
     padding: 5px;
     width: 100%;
 }
-.second-container{
+.second-container1{
     background-color: blueviolet;
     width: 62%;
     display: flex;
     margin: 9%;
+    margin-top: 25%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
