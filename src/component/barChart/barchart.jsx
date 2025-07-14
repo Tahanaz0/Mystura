@@ -38,9 +38,12 @@ const Barchart = () => {
     return (
         <>
             <div>
-                <h2>Total Income</h2>
+                <h2 className=""
+                style={{
+                    margin:'25px'
+                }}>Total Income</h2>
                 <div style={{ width: "100%", height: 250 ,}}>
-                    <ResponsiveContainer width="95%" height="100%">
+                    <ResponsiveContainer width="98%" height="100%">
                         <BarChart data={data} barSize={10} barGap={10} barCategoryGap={15}>
 
                             {/* <CartesianGrid strokeDasharray="3 3" /> */}
@@ -56,7 +59,9 @@ const Barchart = () => {
                     </ResponsiveContainer>
                 </div>
                 <div style={{ width: '100%', height: 300 }}>
-                    <h2>Total Booking</h2>
+                    <h2  style={{
+                    margin:'25px'
+                }}>Total Booking</h2>
 
                     <ResponsiveContainer width="95%" height={250}>
                         <AreaChart
