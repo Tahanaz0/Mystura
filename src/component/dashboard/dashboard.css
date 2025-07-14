@@ -10,7 +10,7 @@
    
   }
 .boxes {
-    width: 90%;
+    width: 900px;
     display: flex;
     justify-content: center;
     align-items: center;
