@@ -10,7 +10,7 @@
    
   }
 .boxes {
-    width: 900px;
+    width: 90%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
 }
 
 .dash-item {
-    width: 18%;
+    width: 155px;
     height: 121px;
     background-color: #cceafd;
     border-radius: 12px;
