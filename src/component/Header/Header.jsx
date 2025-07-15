@@ -15,7 +15,7 @@ const Header = () => {
       case "/":
       case "/dashboard":
         return "Dashboard";
-      case "/category":
+      case "/categories":
         return "Categories";
       case "/user":
         return "Users";

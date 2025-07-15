@@ -4,6 +4,8 @@ import Login from './component/login/Login';
 import Dashboard from './component/dashboard/Dashboard';
 import SideBar from './component/sideBar/sideBar';
 import Header from './component/Header/Header';
+import User from './component/user/User';
+import Categories from './component/categories/Categories';
 // import Header2 from './component/Header2/Header2';
 
 function LayoutWithHeaderSidebar({ children }) {
@@ -29,6 +31,22 @@ function AppRoutes() {
         element={
           <LayoutWithHeaderSidebar>
             <Dashboard/>
+          </LayoutWithHeaderSidebar>
+        }
+      />
+      <Route
+        path="/categories"
+        element={
+          <LayoutWithHeaderSidebar>
+            <Categories/>
+          </LayoutWithHeaderSidebar>
+        }
+      />
+       <Route
+        path="/user"
+        element={
+          <LayoutWithHeaderSidebar>
+            <User/>
           </LayoutWithHeaderSidebar>
         }
       />

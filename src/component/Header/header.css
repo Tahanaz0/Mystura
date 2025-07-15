@@ -2,10 +2,10 @@
 
 /* 🔹 Mobile-First Default */
 .header-container {
-  /* background-color: aquamarine; */
-  width: 80%;
+  background-color: aquamarine;
+  width: 79%;
   background-color: white;
-  margin-left: 21%;
+  margin-left: 25%;
   display: flex;
   justify-content: space-between;
   align-items: center;

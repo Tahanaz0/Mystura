@@ -6,9 +6,9 @@
   left: 0;
   right: 0;
   position: fixed;
-  padding: 5px;
+  padding-left: 15px;
   /* background-color: #013B9C; */
-  margin-left: 5px;
+  /* margin-left: 5px; */
    font-family: "Nunito", sans-serif;
   height: 100vh;
   display: flex;
