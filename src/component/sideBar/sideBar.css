@@ -1,12 +1,12 @@
 .side-bar-main-container{
   /* background-color: blue; */
-  width: 20vw;
+  width: 20%;
   margin-top: 0;
   top: 0;
   left: 0;
   right: 0;
   position: fixed;
-  padding-left: 15px;
+  padding-left: 10px;
   /* background-color: #013B9C; */
   /* margin-left: 5px; */
    font-family: "Nunito", sans-serif;
@@ -33,12 +33,12 @@
     margin: 0;
 }
 .side-bar-heading{
-    font-size: 35px;
+    font-size: 3.5vw;
     font-weight: 600;
     margin: 0;
 }
 .side-bar-pera{
-    font-size: 10px;
+    font-size: 1vw;
     margin: 0;
     font-weight: 400;
 }
@@ -65,7 +65,7 @@
   font-weight: 400;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
-  width: 170px;
+  width: 15vw;
   gap: 10px;
   /* justify-content: center; */
 }
