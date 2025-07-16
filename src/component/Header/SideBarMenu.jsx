@@ -47,7 +47,7 @@ const SmallBoxMenu = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/category" className={({ isActive }) => isActive ? "side-bar-list-item active" : "side-bar-list-item"}>
+          <NavLink to="/categories" className={({ isActive }) => isActive ? "side-bar-list-item active" : "side-bar-list-item"}>
             <span className="side-bar-icon-col"><GoListUnordered className="side-bar-list-icon" /></span>
             <span className="side-bar-text-col">Categories</span>
           </NavLink>
