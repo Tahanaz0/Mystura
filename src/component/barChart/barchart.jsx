@@ -40,7 +40,7 @@ const Barchart = () => {
             <div>
                 <h2 className=""
                 style={{
-                    margin:'25px'
+                    margin:'20px'
                 }}>Total Income</h2>
                 <div style={{ width: "100%", height: 250 ,}}>
                     <ResponsiveContainer width="98%" height="100%">
@@ -63,7 +63,7 @@ const Barchart = () => {
                     margin:'25px'
                 }}>Total Booking</h2>
 
-                    <ResponsiveContainer width="95%" height={250}>
+                    <ResponsiveContainer width="98%" height={250}>
                         <AreaChart
                             data={data2} // ✔ correct data
                             margin={{ top: 20, right: 20, left: 0, bottom: 0 }}
