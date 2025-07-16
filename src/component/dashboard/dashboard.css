@@ -1,9 +1,9 @@
 .dash-container {
-    margin-left: 18vw;
+    margin-left: 20vw;
     width: 80%;
     padding: 20px;
     font-family: "Nunito", sans-serif;
-    margin-top: 5%;
+    margin-top: 65px;
     display: flex;
     overflow-x: hidden;
     flex-direction: column;
@@ -12,7 +12,7 @@
 .boxes {
     width: 100%;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;

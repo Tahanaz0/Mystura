@@ -8,7 +8,7 @@
     /* grid-template-columns: repeat(5, 1fr); */
     gap: 25px;
     font-family: "Nunito", sans-serif;
-    padding: 40px;
+    padding: 55px;
     margin-top: 80px;
     background: #F5F7FA;
   }
@@ -23,7 +23,8 @@
     padding: 15px;
     text-align: center;
     position: relative;
-    transition: 0.3s;
+    /* transition: 0.3s; */
+    overflow: hidden;
   }
   
   .circle-icon {
@@ -139,5 +140,12 @@
       margin-left: 0;
       width: 100vw;
       padding: 10px;
+    }
+  }
+  @media (max-width:344px){
+    .category-card{
+      width: 275px;
+      height:150px;
+      padding: 5px;
     }
   }

@@ -141,7 +141,7 @@
 
 .side-bar-logout-item.active,
 .side-bar-logout-item:hover {
-  background: #e0f7fa;
+  /* background: #e0f7fa; */
   color: #013B9C;
   font-weight: 600;
 }

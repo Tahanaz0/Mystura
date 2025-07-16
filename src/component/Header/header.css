@@ -3,7 +3,7 @@
 /* 🔹 Mobile-First Default */
 .header-container {
   background-color: aquamarine;
-  width: 79%;
+  width: 78%;
   background-color: white;
   margin-left: 25%;
   display: flex;
@@ -160,7 +160,7 @@
 
 .side-bar-list-item.active,
 .side-bar-logout-item.active {
-  background-color: #F0F4FF;
+  /* background-color: #F0F4FF; */
   color: #013B9C;
 }
 
