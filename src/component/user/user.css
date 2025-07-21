@@ -1,13 +1,13 @@
 .table-container {
     background: white;
-    padding: 30px;
+    /* padding: 10px; */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     overflow-x: auto;
     font-family: "Poppins";
     border-collapse: collapse;
-    margin-left: 20vw;
+    margin-left: 260px;
     margin-top: 75px;
-    width: 80%;
+    width: 100%;
   }
   
   table {
