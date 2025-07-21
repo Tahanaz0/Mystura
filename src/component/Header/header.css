@@ -3,9 +3,9 @@
 /* 🔹 Mobile-First Default */
 .header-container {
   background-color: aquamarine;
-  width: 78%;
+  width: 80%;
   background-color: white;
-  margin-left: 25%;
+  margin-left: 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
