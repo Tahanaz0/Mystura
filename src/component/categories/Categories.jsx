@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdMoreVert } from "react-icons/md";
 import { FiEdit, FiTrash } from "react-icons/fi";
-import "./Category.css";
+import "./category.css";
 
 const initialCategories = [
   { title: "Mechanic", icon: "/image/mechanic.png" },

@@ -1,4 +1,4 @@
-.side-bar-main-container{
+.side-bar-main-container {
   /* background-color: blue; */
   width: 20%;
   margin-top: 0;
@@ -6,14 +6,15 @@
   left: 0;
   right: 0;
   position: fixed;
-  padding-left: 10px;
+  /* padding-left: 10px; */
   /* background-color: #013B9C; */
   /* margin-left: 5px; */
-   font-family: "Nunito", sans-serif;
+  font-family: "Nunito", sans-serif;
   height: 100vh;
   display: flex;
   flex-direction: column;
 
+<<<<<<< HEAD
    /* align-items: center; */
    
 }
@@ -26,21 +27,38 @@
     padding: 5px;
     
     /* margin-top: 20px; */
+=======
+  align-items: center;
+
+>>>>>>> bugs-recovered
 }
 
-.side-bar-logo{
-    width: 100px;
-    margin: 0;
+.side-bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #013B9C;
+  padding: 5px;
+
+  /* margin-top: 20px; */
 }
-.side-bar-heading{
-    font-size: 3.5vw;
-    font-weight: 600;
-    margin: 0;
+
+.side-bar-logo {
+  width: 100px;
+  margin: 0;
 }
-.side-bar-pera{
-    font-size: 1vw;
-    margin: 0;
-    font-weight: 400;
+
+.side-bar-heading {
+  /* font-size: 3.5vw; */
+  font-weight: 600;
+  margin: 0;
+}
+
+.side-bar-pera {
+  font-size: 10px;
+  margin: 0;
+  font-weight: 400;
 }
 
 .side-bar-list {
@@ -205,9 +223,9 @@
     font-size: 9px;
   }
 }
-/* @media (max-width:2560px){
-  .side-bar-main-container{
+
+@media (max-width:2560px) {
+  .side-bar-main-container {
     width: 19%;
   }
-} */
-
+}
