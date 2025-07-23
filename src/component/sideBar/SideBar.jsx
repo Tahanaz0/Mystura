@@ -32,7 +32,7 @@ const Sidebar = () => {
         <li>
           <NavLink to="/user" className={({ isActive }) => isActive ? "side-bar-list-item active" : "side-bar-list-item"}>
             <span className="side-bar-icon-col"><FaRegUser className="side-bar-list-icon" /></span>
-            <span className="side-bar-text-col">Users</span>
+            <span className="side-bar-text-col2">Users</span>
           </NavLink>
         </li>
         <li>

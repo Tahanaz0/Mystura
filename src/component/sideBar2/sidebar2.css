@@ -1,4 +1,4 @@
-.sideBar-main-container{
+/* .sideBar-main-container{
     background-color: blue;
     width: 20%;
     margin-top: 0;
@@ -35,7 +35,6 @@
     background-color: blueviolet;
     display: flex;
     width: 100%;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     gap: 5px;
@@ -52,4 +51,4 @@
     background-color: cadetblue;
     margin: 9%;
     margin-top: 20%;
-}
+} */
