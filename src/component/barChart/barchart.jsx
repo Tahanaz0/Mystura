@@ -1,4 +1,5 @@
 import React from "react";
+import './barchat.css'
 import {
     ResponsiveContainer, BarChart, Bar, XAxis,
     YAxis, CartesianGrid, Tooltip, AreaChart, Area,
@@ -37,14 +38,14 @@ const data2 = [
 const Barchart = () => {
     return (
         <>
-            <div>
+            <div className="chart-wrapper">
                 <h2 className=""
                 style={{
                     margin:'20px'
                 }}>Total Income</h2>
                 <div style={{ width: "100%", height: 250 ,}}>
-                    <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={data} barSize={10} barGap={10} barCategoryGap={15}>
+                    <ResponsiveContainer width='100%' height="100%">
+                        <BarChart data={data} barSize={10} barGap={10} barCategoryGap={25}>
 
                             {/* <CartesianGrid strokeDasharray="3 3" /> */}
                             <CartesianGrid stroke="#ccc" strokeDasharray="0" vertical={false} />
@@ -63,7 +64,7 @@ const Barchart = () => {
                     margin:'25px'
                 }}>Total Booking</h2>
 
-                    <ResponsiveContainer width="98%" height={250}>
+                    <ResponsiveContainer width="100%" height={250}>
                         <AreaChart
                             data={data2} // ✔ correct data
                             margin={{ top: 20, right: 20, left: 0, bottom: 0 }}
