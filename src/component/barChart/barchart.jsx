@@ -43,7 +43,7 @@ const Barchart = () => {
                     margin:'20px'
                 }}>Total Income</h2>
                 <div style={{ width: "100%", height: 250 ,}}>
-                    <ResponsiveContainer width="98%" height="100%">
+                    <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={data} barSize={10} barGap={10} barCategoryGap={15}>
 
                             {/* <CartesianGrid strokeDasharray="3 3" /> */}

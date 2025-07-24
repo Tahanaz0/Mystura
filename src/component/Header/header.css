@@ -2,7 +2,7 @@
   background-color: aquamarine;
   width: 80%;
   background-color: white;
-  margin-left: 280px;
+  margin-left: 250px;
   display: flex;
   /* justify-content: space-between; */
   /* align-items: center; */
@@ -13,8 +13,10 @@
   font-family: "Nunito", sans-serif;
   box-sizing: border-box;
   z-index: 1000;
-  padding: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   overflow: hidden;
+  border-bottom: 1px solid #E6EFF5;
 }
 
 .header-inner-container {
@@ -57,7 +59,7 @@
   align-items: center;
   justify-content: flex-end;
   padding-right: 20px;
-  gap: 15px;
+  gap: 23px;
   min-width: 0;
   flex-wrap: nowrap;
   overflow-x: auto;

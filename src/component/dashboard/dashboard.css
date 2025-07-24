@@ -1,10 +1,10 @@
 .dash-container {
-    margin-left: 20vw;
+    /* margin-left: 20vw; */
     width: 80%;
     padding: 20px;
     font-family: "Nunito", sans-serif;
     margin-top: 65px;
-    margin-left: 280px;
+    margin-left: 250px;
     display: flex;
     overflow-x: hidden;
     flex-direction: column;
@@ -61,11 +61,15 @@
         margin-left: 0;
     }
 } */
-@media (max-width:768px){
-    .dash-container{
-        margin-left: 0;
+@media (max-width: 768px) {
+    .dash-container {
+      margin-left: 0;
     }
-}
+    .boxes {
+      justify-content: center;
+    }
+  }
+  
 @media (min-width:1024px){
     /* .dash-container{
         margin-left: 25%;
