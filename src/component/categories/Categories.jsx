@@ -12,7 +12,7 @@ const initialCategories = [
   { title: "Childcare", icon: "/image/child.png" },
   { title: "Painting", icon: "/image/painting.png" },
   { title: "Labourer/Construction workers", icon: "/image/worker.png" },
-  { title: "Seamstress", icon: "/image/Steamstress.png" },
+  { title: "Seamstress", icon: "/image/Seamstress.png" },
   { title: "Locksmith", icon: "/image/lock.png" },
   { title: "Practical Lessons", icon: "/image/practical.png" },
   { title: "Handy Man", icon: "/image/man.png" },

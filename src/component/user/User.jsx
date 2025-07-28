@@ -4,75 +4,76 @@ import UserAddForm from './UserAddForm';
 import UserDelete from './UserDelete';
 import { FiEdit, FiTrash } from 'react-icons/fi';
 
-const users = [
-  {
-    name: 'Daniel',
-    email: 'daniel@gmail.com',
-    phone: '+92 123456789',
-    gender: 'Male',
-    userType: 'Admin',
-    status: 'Active',
-  },
-  {
-    name: 'Jessica',
-    email: 'jessica@gmail.com',
-    phone: '+92 123456789',
-    gender: 'Female',
-    userType: 'User',
-    status: 'Moderate',
-  },
-  {
-    name: 'Daniel',
-    email: 'daniel@gmail.com',
-    phone: '+92 123456789',
-    gender: 'Male',
-    userType: 'Provider',
-    status: 'Decline',
-  },
-  {
-    name: 'Daniel',
-    email: 'daniel@gmail.com',
-    phone: '+92 123456789',
-    gender: 'Male',
-    userType: 'Provider',
-    status: 'Decline',
-  },
-  {
-    name: 'Daniel',
-    email: 'daniel@gmail.com',
-    phone: '+92 123456789',
-    gender: 'Male',
-    userType: 'Provider',
-    status: 'Decline',
-  },
-  {
-    name: 'Daniel',
-    email: 'daniel@gmail.com',
-    phone: '+92 123456789',
-    gender: 'Male',
-    userType: 'Provider',
-    status: 'Decline',
-  },
-  {
-    name: 'Daniel',
-    email: 'daniel@gmail.com',
-    phone: '+92 123456789',
-    gender: 'Male',
-    userType: 'Provider',
-    status: 'Decline',
-  },
-  {
-    name: 'Daniel',
-    email: 'daniel@gmail.com',
-    phone: '+92 123456789',
-    gender: 'Male',
-    userType: 'Provider',
-    status: 'Decline',
-  },
-  // ... add rest here similarly
-];
+
 
 const User = () => {
+  const [users, setUsers] = useState([
+    {
+      name: 'Daniel',
+      email: 'daniel@gmail.com',
+      phone: '+92 123456789',
+      gender: 'Male',
+      userType: 'Admin',
+      status: 'Active',
+    },
+    {
+      name: 'Jessica',
+      email: 'jessica@gmail.com',
+      phone: '+92 123456789',
+      gender: 'Female',
+      userType: 'User',
+      status: 'Moderate',
+    },
+    {
+      name: 'Daniel',
+      email: 'daniel@gmail.com',
+      phone: '+92 123456789',
+      gender: 'Male',
+      userType: 'Provider',
+      status: 'Decline',
+    },
+    {
+      name: 'Daniel',
+      email: 'daniel@gmail.com',
+      phone: '+92 123456789',
+      gender: 'Male',
+      userType: 'Provider',
+      status: 'Decline',
+    },
+    {
+      name: 'Daniel',
+      email: 'daniel@gmail.com',
+      phone: '+92 123456789',
+      gender: 'Male',
+      userType: 'Provider',
+      status: 'Decline',
+    },
+    {
+      name: 'Daniel',
+      email: 'daniel@gmail.com',
+      phone: '+92 123456789',
+      gender: 'Male',
+      userType: 'Provider',
+      status: 'Decline',
+    },
+    {
+      name: 'Daniel',
+      email: 'daniel@gmail.com',
+      phone: '+92 123456789',
+      gender: 'Male',
+      userType: 'Provider',
+      status: 'Decline',
+    },
+    {
+      name: 'Daniel',
+      email: 'daniel@gmail.com',
+      phone: '+92 123456789',
+      gender: 'Male',
+      userType: 'Provider',
+      status: 'Decline',
+    },
+
+  ]);
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
 
@@ -90,10 +91,19 @@ const User = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+  const handleAddUser = (newUser) => {
+    setUsers([...users, newUser]);
+  };
+  const handleDeleteUser = (indexToDelete) => {
+    const updatedUsers = users.filter((_, index) => index !== indexToDelete);
+    setUsers(updatedUsers);
+  };
+
 
   return (
     <>
-      <UserAddForm />
+      <UserAddForm onAddUser={handleAddUser} />
+
 
       <div className="table-container">
         <table className="user-table">
@@ -133,9 +143,9 @@ const User = () => {
                       <button>
                         <FiEdit /> Edit
                       </button>
-                      <button>
-                        <FiTrash /> <UserDelete />
-                      </button>
+                      <UserDelete onDelete={() => handleDeleteUser(index)}>
+                        <FiTrash /> Delete
+                      </UserDelete>
                     </div>
                   )}
                 </td>
@@ -157,9 +167,9 @@ const User = () => {
       </div>
 
       {/* Floating Plus Button */}
-      <div className="add-card">
+      {/* <div className="add-card">
         <img className="add-icon" src="/image/add.png" alt="plus" />
-      </div>
+      </div> */}
     </>
   );
 };

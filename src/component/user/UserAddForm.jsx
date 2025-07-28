@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./User.css"
+import "./user.css"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus, faXmark } from '@fortawesome/free-solid-svg-icons'
 import Box from '@mui/material/Box';
@@ -31,17 +31,61 @@ const style = {
     display: 'none'
   }
 };
-const UserAddForm = () => {
-  const [phone, setPhone] = useState('');
+const UserAddForm = (props) => {
+  // const [phone, setPhone] = useState('');
 
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [fullName, setFullName] = useState('');
+  const [gender, setGender] = useState('');
+  const [role, setRole] = useState('');
+  const [phone, setPhone] = useState('');
+  const handleAddUser = () => {
+    console.log('form submit')
+    if (!email || !password || !confirmPassword || !fullName || !gender || !role || !phone) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    const newUser = {
+      name: fullName,
+      email,
+      phone,
+      gender,
+      userType: role,
+      status: 'Active',
+    };
+
+    props.onAddUser(newUser); // 👈 Parent ko new user bhej raha hai
+    alert("User added successfully!");
+
+    // Clear form
+    setEmail('');
+    setPassword('');
+    setConfirmPassword('');
+    setFullName('');
+    setGender('');
+    setRole('');
+    setPhone('');
+
+    handleClose(); // 👈 Form band karein
+  };
+  
+
 
   return (
     <>
       <div className='add-card'>
-        <img className='add-icon' onClick={handleOpen} src="/images/plus.svg" alt="" />
+        <img className='add-icon' onClick={handleOpen} src="/image/add.png" alt="" />
       </div>
 
       <Modal
@@ -59,40 +103,57 @@ const UserAddForm = () => {
             </div>
           </Typography>
 
-          <div className='main-modal'>
-            <div className='modal-input'>
-              <p>Full Name</p>
-              <input type="text" placeholder='Full Name' />
+          <div className="modal-form-container">
+            <div className="form-group">
+              <label>Email</label>
+              <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} />
             </div>
 
-            <div className='modal-input'>
-              <p>Email Address</p>
-              <input type="password" placeholder='Email Addres' />
+            <div className="form-group">
+              <label>Password</label>
+              <input type="password" placeholder="Enter your Password" value={password} onChange={(e) => setPassword(e.target.value)} />
             </div>
 
-            <div className='modal-input'>
-              <p>Password</p>
-              <input type="password" placeholder='Password' />
+            <div className="form-group">
+              <label>Confirm Password</label>
+              <input type="password" placeholder="Confirm Password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
+
             </div>
 
-            <div className='modal-input'>
-              <p>Confirm password</p>
-              <input type="text" placeholder='Confirm password' />
+            <div className="form-group">
+              <label>Full Name</label>
+              <input type="text" placeholder="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} />
             </div>
 
-            <div className='modal-input'>
-              <p>Phone no :</p>
-              <PhoneInput
-              className='phone-input'
-                country={'pk'}
-                enableSearch={true}
-                inputStyle={{ width: '100%', border: " 2px solid var(--blue)", outline: "none" }}
-              />
+            <div className="form-group">
+              <label>Phone Number</label>
+              <input type="number" placeholder="Phone Name" value={phone} onChange={(e) => setPhone(e.target.value)} />
             </div>
-            <div>
-              <button onClick={handleClose} className='modal-btn'>Add User</button>
+
+            <div className="form-group">
+              <label>Gender</label>
+
+              <select value={gender} onChange={(e) => setGender(e.target.value)}>
+                <option value="">Gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
             </div>
+
+            <div className="form-group">
+              <label>Role</label>
+
+              <select value={role} onChange={(e) => setRole(e.target.value)}>
+                <option value="">Select Service category</option>
+                <option value="Admin">Admin</option>
+                <option value="User">User</option>
+                <option value="Provider">Provider</option>
+              </select>
+            </div>
+
+            <button className="submit-btn" onClick={handleAddUser}>Add User</button>
           </div>
+
         </Box>
       </Modal>
     </>

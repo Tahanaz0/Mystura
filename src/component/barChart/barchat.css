@@ -1,5 +1,6 @@
-/* .chart-wrapper {
-    width: 100%;
-    overflow-x: auto; 
+.chart-wrapper {
+    /* width: 100%; */
+    /* padding: 10px; */
+    overflow: hidden; 
   }
-   */
+  
