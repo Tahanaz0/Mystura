@@ -2,12 +2,12 @@
     background: white;
     /* padding: 10px; */
     /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); */
-    overflow-x: auto;
-    font-family: "Poppins";
-    border-collapse: collapse;
+    /* overflow: auto; */
+    /* font-family: "Poppins"; */
+    /* border-collapse: collapse; */
     margin-left: 240px;
     margin-top: 70px;
-    width: 100%;
+    width: 80vw;
     font-family: "Nunito", sans-serif;
 
   }
@@ -26,7 +26,7 @@
   
   .modal-input p {
     margin-top: 10px;
-    font-size: 13px;
+    /* font-size: 13px; */
   }
   
   .modal-input input {
@@ -34,14 +34,14 @@
     padding: 10px;
     border-radius: 6px;
     border: 2px solid var(--blue);
-    font-size: 11px;
+    /* font-size: 11px; */
     box-sizing: border-box;
     outline: none;
     border: 2px solid var(--green);
   }
   .phone-input {
     border-radius: 6px;
-    font-size: 14px;
+    /* font-size: 14px; */
     border: 2px solid var(--green);
   }
   
@@ -70,7 +70,7 @@
     width: 100%;
     padding: 9px;
     border: 2px solid var(--green);
-    font-size: 14px;
+    /* font-size: 14px; */
     margin-top: 10px;
     border-radius: 8px;
     padding-right: 20px;
@@ -98,7 +98,7 @@
   
   tbody td {
     padding: 16px 20px;
-    font-size: 15px;
+    /* font-size: 15px; */
     color: black;
     border-top: 1px solid #e5e7eb;
     text-align: center;
@@ -107,7 +107,7 @@
   .status {
     padding: 4px 12px;
     border-radius: 9999px;
-    font-size: 12px;
+    /* font-size: 12px; */
     font-weight: bold;
   }
   
@@ -127,7 +127,7 @@
   }
   
   .dots {
-    font-size: 20px;
+    /* font-size: 20px; */
     cursor: pointer;
     text-align: center;
     color: #6b7280;
@@ -138,7 +138,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 14px;
+    /* font-size: 14px; */
     color: #6b7280;
     margin-right: 80px;
     margin-left: 20px;
@@ -146,7 +146,7 @@
   
   .pagination button {
     border: none;
-    font-size: 14px;
+    /* font-size: 14px; */
     margin: 0 4px;
     padding: 6px 12px;
     border-radius: 6px;
@@ -181,7 +181,7 @@
     border: none;
     text-align: left;
     padding: 10px 12px;
-    font-size: 14px;
+    /* font-size: 14px; */
     cursor: pointer;
     color: black;
     transition: background 0.2s;
@@ -208,7 +208,7 @@
     bottom: 10px;
     width: 40px;
     height: 60px;
-    font-size: 30px;
+    /* font-size: 30px; */
     font-weight: 600;
     background-color: var(--blue);
     /* color: white; */
@@ -244,7 +244,7 @@
   }
   .para-delete {
     padding-top: 10px;
-    font-size: 22px;
+    /* font-size: 22px; */
     color: #999d9b;
   }
   .delete-icon {

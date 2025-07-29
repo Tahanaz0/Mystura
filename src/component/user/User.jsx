@@ -144,7 +144,9 @@ const User = () => {
                         <FiEdit /> Edit
                       </button>
                       <UserDelete onDelete={() => handleDeleteUser(index)}>
-                        <FiTrash /> Delete
+                        <FiTrash style={{
+                          color:'black'
+                        }}/> Delete
                       </UserDelete>
                     </div>
                   )}
