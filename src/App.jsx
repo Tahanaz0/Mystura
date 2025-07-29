@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Login from './component/login/Login';
 import Dashboard from './component/dashboard/Dashboard';
 import SideBar from './component/sideBar/sideBar';
+import Services from "./component/services/Services";
 import Header from './component/Header/Header';
 import User from './component/user/User';
 import Categories from './component/categories/Categories';
@@ -13,7 +14,7 @@ function LayoutWithHeaderSidebar({ children }) {
     <>
       <Header />
       <div style={{ display: 'flex' }}>
-        <SideBar/>
+        <SideBar />
         <div className="main-content">
           {children}
         </div>
@@ -30,7 +31,7 @@ function AppRoutes() {
         path="/dashboard"
         element={
           <LayoutWithHeaderSidebar>
-            <Dashboard/>
+            <Dashboard />
           </LayoutWithHeaderSidebar>
         }
       />
@@ -38,19 +39,28 @@ function AppRoutes() {
         path="/categories"
         element={
           <LayoutWithHeaderSidebar>
-            <Categories/>
+            <Categories />
           </LayoutWithHeaderSidebar>
         }
       />
-       <Route
+      <Route
         path="/user"
         element={
           <LayoutWithHeaderSidebar>
-            <User/>
+            <User />
+          </LayoutWithHeaderSidebar>
+        }
+      />
+      <Route
+        path="/services"
+        element={
+          <LayoutWithHeaderSidebar>
+            <Services />
           </LayoutWithHeaderSidebar>
         }
       />
     </Routes>
+    
   );
 }
 

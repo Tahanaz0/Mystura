@@ -30,9 +30,13 @@ const Sidebar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/user" className={({ isActive }) => isActive ? "side-bar-list-item active" : "side-bar-list-item"}>
+          {/* <NavLink to="/user" className={({ isActive }) => isActive ? "side-bar-list-item active" : "side-bar-list-item"}>
             <span className="side-bar-icon-col"><FaRegUser className="side-bar-list-icon" /></span>
-            <span className="side-bar-text-col2">Users</span>
+            <span className="side-bar-text-col">Users</span>
+          </NavLink> */}
+           <NavLink to="/user" className={({ isActive }) => isActive ? "side-bar-list-item active" : "side-bar-list-item"}>
+            <span className="side-bar-icon-col"><FaRegUser className="side-bar-list-icon" /></span>
+            <span className="side-bar-text-col">User</span>
           </NavLink>
         </li>
         <li>

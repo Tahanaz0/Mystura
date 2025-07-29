@@ -53,18 +53,19 @@
 }
 
 .side-bar-list-item {
-  padding: 10px 20px;
-  font-size: 15px;
+  padding: 10px 15px;
+  /* font-size: 15px; */
   color: #b0b0b0;
-  border-radius: 8px;
+  /* border-radius: 8px; */
   cursor: pointer;
   display: flex;
   align-items: center;
-  font-weight: 400;
+  /* font-weight: 400; */
   text-decoration: none;
+  /* justify-content: space-between; */
   transition: background 0.2s, color 0.2s;
   width: 100%;
-  gap: 10px;
+  gap: 15px;
 }
 
 .side-bar-list-icon {
@@ -73,9 +74,10 @@
   color: #b0b0b0;
   transition: color 0.2s;
 }
-.side-bar-text-col2{
-  padding-left: 20px;
-}
+/* .side-bar-text-col2{
+
+  text-align: center;
+} */
 
 .side-bar-list-item.active,
 .side-bar-list-item:hover {
@@ -118,10 +120,11 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-weight: 400;
   text-decoration: none;
-  width: 130px;
-  gap: 10px;
+  width: 120px;
+  gap: 15px;
 }
 
 .side-bar-logout-item .side-bar-list-icon {
@@ -152,16 +155,18 @@
 }
 
 .side-bar-icon-col {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: center;
-  min-width: 24px;
-  margin-right: 12px;
+  justify-content: center; */
+  /* min-width: 24px; */
+  /* margin-right: 12px; */
 }
 
 .side-bar-text-col {
   display: flex;
   align-items: center;
+  /* background-color: #d32f2f; */
+  width: 80px;
 }
 
 @media screen and (max-width: 900px) {
