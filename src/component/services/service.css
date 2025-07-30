@@ -2,7 +2,7 @@
     margin-top: 60px;
     margin-left: 243px;
     background: #F5F7FA;
-    width: 80vw; 
+    width: 77vw; 
     min-height: 100vh;          
     overflow-x: hidden;        
     text-align: center;
@@ -10,6 +10,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    font-family: "Nunito", sans-serif;
 }
 
 .service-btn {
@@ -34,11 +35,52 @@
     background-color: #013B9C;
     color: white;
 }
+.service-mid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 90%;
+    align-items: center;
+    margin-top: 10px;
+    /* box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); */
+}
 
+.service-card {
+    width: 100%;
+    /* background-color: #013B9C; */
+    margin: 0;
+    border: 1px solid #DDDDDD;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
+.service-card img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: 150px;
+    display: block;
+}
+.service-text{
+    display: flex;
+    justify-content: space-between;
+    /* width: 100%; */
+    padding: 5px;;
+    gap: 10px;
+}
+.service-name{
+    /* font-size: 18px; */
+    font-weight: 600;
+    font-style: bold;
+    
+}
 
-
-
+.address {
+  text-align: left;
+  padding-left: 5px;
+  margin-top: 0%;
+  color: #455A64;
+  /* font-weight: 300; */
+}
 
 
 @media (max-width: 768px) {
@@ -55,5 +97,29 @@
 
     .btn1 {
         width: 50vw; /* Full width buttons */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .service-mid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .service-mid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1025px) {
+    .service-mid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
     }
 }

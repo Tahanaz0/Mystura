@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     margin-left: 20vw;
-    width: 80vw;
+    width: 78vw;
     box-sizing: border-box;
     display: grid;
     /* grid-template-columns: repeat(5, 1fr); */
