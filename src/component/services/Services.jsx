@@ -23,37 +23,37 @@ const Services = () => {
         },
         {
             img: "/image/landScap.png",
-            name: "Elite Machine Services",
+            name: "Green Yard Landscaping",
             rating: 4.3,
             address: "47B R.Block Morden, London"
         },
         {
             img: "/image/paint.png",
-            name: "Elite Machine Services",
+            name: "Pro Painters Crew",
             rating: 4.3,
             address: "47B R.Block Morden, London"
         },
         {
             img: "/image/landScap.png",
-            name: "Elite Machine Services",
+            name: "Green Yard Landscaping",
             rating: 4.3,
             address: "47B R.Block Morden, London"
         },
         {
             img: "/image/pett.png",
-            name: "Elite Machine Services",
+            name: "Happy Paws Pet Care",
             rating: 4.3,
             address: "47B R.Block Morden, London"
         },
         {
             img: "/image/makeover.png",
-            name: "Elite Machine Services",
+            name: "Glow Up Makeover Services",
             rating: 4.3,
             address: "47B R.Block Morden, London"
         },
         {
             img: "/image/pett.png",
-            name: "Elite Machine Services",
+            name: "Happy Paws Pet Care",
             rating: 4.3,
             address: "47B R.Block Morden, London"
         }
@@ -63,7 +63,11 @@ const Services = () => {
             <div className="service-main">
                 <div>
                     <div className="service-btn">
-                        <button className="btn1">Active</button>
+                        <button className="btn1" 
+                        style={{
+                            backgroundColor: "#013B9C",
+                            color: "white",
+                        }}>Active</button>
                         <button className="btn1">Modrate</button>
                         <button className="btn1">Pending</button>
                     </div>
@@ -72,7 +76,7 @@ const Services = () => {
                 <div className="service-mid">
                     {servicesData.map((service, idx) => (
                         <div key={idx} className="service-card" >
-                            <div>
+                            <div className="service-img">
                                 <img src={service.img} alt="Service" />
                             </div>
                             <div className="service-text">
