@@ -4,6 +4,7 @@ import Login from './component/login/Login';
 import Dashboard from './component/dashboard/Dashboard';
 import SideBar from './component/sideBar/sideBar';
 import Services from "./component/services/Services";
+import ServiceDetail from "./component/services/ServiceDetail";
 import Header from './component/Header/Header';
 import User from './component/user/User';
 import Categories from './component/categories/Categories';
@@ -56,6 +57,14 @@ function AppRoutes() {
         element={
           <LayoutWithHeaderSidebar>
             <Services />
+          </LayoutWithHeaderSidebar>
+        }
+      />
+      <Route
+        path="/service/:id"
+        element={
+          <LayoutWithHeaderSidebar>
+            <ServiceDetail />
           </LayoutWithHeaderSidebar>
         }
       />
