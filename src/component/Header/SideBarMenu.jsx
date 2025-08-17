@@ -71,7 +71,7 @@ const SmallBoxMenu = () => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to="/settings" className={({ isActive }) => isActive ? "side-bar-list-item active" : "side-bar-list-item"}>
+                <NavLink to="/setting" className={({ isActive }) => isActive ? "side-bar-list-item active" : "side-bar-list-item"}>
                   <span className="side-bar-icon-col"><MdOutlineSettings className="side-bar-list-icon" /></span>
                   <span className="side-bar-text-col">Settings</span>
                 </NavLink>

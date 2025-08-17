@@ -23,7 +23,7 @@ const Header = () => {
         return "Bookings";
       case "/services":
         return "Services";
-      case "/settings":
+      case "/setting":
         return "Settings";
       default:
         return "";
