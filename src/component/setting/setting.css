@@ -1,21 +1,27 @@
 .setting-main {
-    width: 80%;
+    width: 98%;
     /* min-height: 100vh; */
     background: #F5F7FA;
-    margin-left: 245px;
+    margin-left: 250px;
+    padding: 15px;
     margin-top: 60px;
     font-family: "Nunito", sans-serif;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
 }
 
 .settings-container {
     display: grid;
-    grid-template-columns: 260px 380px 1fr;
+    grid-template-columns: 260px minmax(0, 1fr);
     gap: 20px;
-    padding: 20px;
+    /* padding: 10px; */
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
 }
 
 .settings-container.chat-open {
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 260px 1fr;
 }
 
 .settings-sidebar {
@@ -23,6 +29,11 @@
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     overflow: hidden;
+}
+
+/* On larger screens, when a chat is open, hide the sidebar so messages and chat sit side-by-side */
+.settings-container.chat-open .settings-sidebar {
+    display: none;
 }
 
 .sidebar-item {
@@ -49,7 +60,9 @@
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     padding: 18px;
-    width: 50vw;
+    width: 100%;
+    min-width: 0;
+    justify-self: stretch;
 }
 
 .settings-container.chat-open .messages-panel {
@@ -145,19 +158,19 @@
 /* Chat panel */
 .chat-panel {
     background: #FFFFFF;
+    width: 100%;
+    min-width: 0;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     padding: 18px;
-    display: flex;
+    min-height: calc(100vh - 230px);
+
+    display: none;
     flex-direction: column;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .2s ease;
 }
 
 .chat-panel.visible {
-    opacity: 1;
-    pointer-events: auto;
+    display: flex;
 }
 
 .chat-thread {
@@ -220,12 +233,38 @@
     .settings-container {
         grid-template-columns: 1fr;
     }
+    /* On small screens, force single column even when chat is open */
+    .settings-container.chat-open {
+        grid-template-columns: 1fr;
+    }
+    /* On small screens, show all three stacked */
+    .settings-container.chat-open .settings-sidebar {
+        display: block;
+    }
+    /* Make each section take full width */
+    .messages-panel,
+    .settings-sidebar,
+    .chat-panel.visible {
+        width: 100%;
+        max-width: none;
+    }
 }
 
 @media (max-width: 768px) {
     .setting-main {
         margin-left: 0;
         width: 100%;
+    }
+    .settings-container {
+        grid-template-columns: 1fr;
+    }
+    .messages-panel,
+    .settings-sidebar{
+        width: 100%;
+        grid-template-columns: 1fr;
+        justify-self: stretch;
+        min-width: 0;
+        max-width: none;
     }
 }
 

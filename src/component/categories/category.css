@@ -139,6 +139,7 @@
     .category-grid {
       margin-left: 0;
       width: 100vw;
+      margin-top: 70px;
       padding: 10px;
     }
   }

@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faSearch } from "@fortawesome/free-solid-svg-icons";
 import { useLocation } from "react-router";
 import SmallBoxMenu from "./SideBarMenu";
 import { IoIosNotificationsOutline } from "react-icons/io";
+import { BsCheckCircleFill } from "react-icons/bs";
 import { colors } from "@mui/material";
 
 const Header = () => {
   const location = useLocation();
+  const [isNotifOpen, setIsNotifOpen] = useState(false);
+  const notifications = [
+    { id: 1, title: "Notification received", time: "Today | 09:24 AM", body: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." },
+    { id: 2, title: "Notification received", time: "Today | 09:24 AM", body: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." },
+    { id: 3, title: "Notification received", time: "Today | 09:24 AM", body: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." },
+    { id: 4, title: "Notification received", time: "Today | 09:24 AM", body: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." },
+    { id: 5, title: "Notification received", time: "Today | 09:24 AM", body: "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." },
+  ];
 
   const getHeading = (path) => {
     switch (path) {
@@ -68,12 +77,41 @@ const Header = () => {
               width: "40px",
               height: "20px",
               cursor: "pointer",
-            }} />
+            }}
+            onClick={() => setIsNotifOpen(true)} />
 
             <img className="avator item" src="/image/profile.png" alt="" />
           </div>
         </div>
       </div>
+
+      {isNotifOpen && (
+        <div className="modal-overlay" onClick={() => setIsNotifOpen(false)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h3>Notifications</h3>
+              <button className="modal-close" onClick={() => setIsNotifOpen(false)}>×</button>
+            </div>
+            <div className="notif-list">
+              {notifications.map((n) => (
+                <div key={n.id} className="notif-item">
+                  <div className="notif-icon"><BsCheckCircleFill/></div>
+                  <div className="notif-body">
+                    <div className="notif-title-row">
+                      <span className="notif-title">{n.title}</span>
+                      <span className="notif-time">{n.time}</span>
+                    </div>
+                    <div className="notif-text">{n.body}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <div className="modal-footer">
+              <button className="btn-show-all">Show all</button>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
