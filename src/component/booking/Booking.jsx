@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './booking.css';
-import { FaLessThan, FaGreaterThan, FaRegClock } from 'react-icons/fa';
+import {  FaRegClock } from 'react-icons/fa';
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
 // import { PiGreaterThanThin } from 'react-icons/pi';
 
 const Booking = () => {
@@ -11,40 +12,41 @@ const Booking = () => {
         {
             time: '08:00 am to 10:00 am',
             bookings: [
-                { name: 'Helina', color: '#619C01', profile: './image/bookingp.png' },
-                { name: 'Ava', color: '#33D3D4', profile: './image/bookingp.png' },
-                { name: 'Chloe', color: '#5E9AFF', profile: './image/bookingp.png' }
+                { name: 'Helina', color: '#619C01', profile: '/image/bookingp.png' },
+                { name: 'Ava', color: '#33D3D4', profile: '/image/bookingp.png' },
+                { name: 'Chloe', color: '#5E9AFF', profile: '/image/bookingp.png' }
             ]
         },
         {
-            time: '10:00 am to 12:00 pm',
-            bookings: []
+            time2: '10:00 am to 12:00 pm',
+            bookings: [
+            ]
         },
         {
             time: '12:00 pm to 02:00 pm',
             bookings: [
-                { name: 'Isla', color: '#AC39D4', profile: './image/bookingp.png' }
+                { name: 'Isla', color: '#AC39D4', profile: '/image/bookingp.png' }
             ]
         },
         {
-            time: '02:00 pm to 04:00 pm',
+            time2: '02:00 pm to 04:00 pm',
             bookings: []
         },
         {
             time: '04:00 pm to 06:00 pm',
             bookings: [
-                { name: 'Zoe', color: '#FF9A6C', profile: './image/bookingp.png' },
-                { name: 'Maya', color: '#E13A95', profile: './image/bookingp.png' }
+                { name: 'Zoe', color: '#FF9A6C', profile: '/image/bookingp.png' },
+                { name: 'Maya', color: '#E13A95', profile: '/image/bookingp.png' }
             ]
         },
         {
-            time: '06:00 pm to 08:00 pm',
+            time2: '06:00 pm to 08:00 pm',
             bookings: []
         },
         {
             time: '08:00 pm to 10:00 pm',
             bookings: [
-                { name: 'Luna', color: '#AE7461', profile: './image/bookingp.png' }
+                { name: 'Luna', color: '#AE7461', profile: '/image/bookingp.png' }
             ]
         }
     ];
@@ -81,11 +83,11 @@ const Booking = () => {
                     {/* <span className="calendar-icon">📅</span> */}
                 </div>
                 <div className="navigation-links">
-                    <button onClick={getPreviousDay} className="nav-btn"><FaLessThan 
+                    <button onClick={getPreviousDay} className="nav-btn"><FaAngleLeft
                     style={{
                         color:'#013B9C'
                     }}/> Previous Day</button>
-                    <button onClick={getNextDay} className="nav-btn">Next Day <FaGreaterThan 
+                    <button onClick={getNextDay} className="nav-btn">Next Day <FaAngleRight 
                     style={{
                         color:'#013B9C'
                     }}/></button>
@@ -98,11 +100,13 @@ const Booking = () => {
                 
                 <div className="time-slots">
                     {timeSlots.map((slot, index) => (
-                        <div key={index} className="time-slot">
+                        <div key={index} className={`time-slot ${slot.time2 ? 'alt' : ''}`}>
                             <div className="time-header">
                                 <span className="clock-icon"><FaRegClock /></span>
-                                <span className="time-range">{slot.time}</span>
+                                {slot.time && <span className="time-range">{slot.time}</span>}
+                                {slot.time2 && <span className="time-range1">{slot.time2}</span>}
                             </div>
+                            
                             <div className="bookings-container">
                                 {slot.bookings.length > 0 ? (
                                     slot.bookings.map((booking, bookingIndex) => (
@@ -131,11 +135,11 @@ const Booking = () => {
                     Showing 1 to 3 of 12 entries
                 </div>
                 <div className="pagination-booking">
-                    <button className="page-btn"><FaLessThan /></button>
+                    <button className="page-btn2"><FaAngleLeft /></button>
                     <button className="page-btn active">1</button>
                     <button className="page-btn">2</button>
                     <button className="page-btn">3</button>
-                    <button className="page-btn"><FaGreaterThan /></button>
+                    <button className="page-btn2"><FaAngleRight /></button>
                 </div>
             </div>
         </div>

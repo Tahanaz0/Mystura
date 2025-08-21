@@ -1,12 +1,236 @@
-.setting-main{
-    width: 90%;
-    height: 100vh;
-    background-color: #f0f0f0;
+.setting-main {
+    width: 80%;
+    /* min-height: 100vh; */
+    background: #F5F7FA;
     margin-left: 245px;
-    margin-top: 60px
-    
+    margin-top: 60px;
+    font-family: "Nunito", sans-serif;
 }
-.setting-title{
-    font-size: 2rem;
-    font-weight: 600;
+
+.settings-container {
+    display: grid;
+    grid-template-columns: 260px 380px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.settings-container.chat-open {
+    grid-template-columns: 1fr 2fr;
+}
+
+.settings-sidebar {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+}
+
+.sidebar-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px;
+    border-bottom: 1px solid #EEF1F5;
+    cursor: pointer;
+    color: #344054;
+    background: #FFFFFF;
+}
+
+.sidebar-item.active {
+    background: #F0F4FF;
+}
+
+.sidebar-item .chevron {
+    color: #98A2B3;
+}
+
+.messages-panel {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 18px;
+    width: 50vw;
+}
+
+.settings-container.chat-open .messages-panel {
+    /* stretch list when sidebar hidden */
+    min-width: 0;
+}
+
+.panel-header {
+    font-weight: 700;
+    color: #344054;
+    margin-bottom: 12px;
+}
+
+.search-wrapper-setting {
+    position: relative;
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.search-input-setting {
+    width: 100%;
+    padding: 12px 40px 12px 14px;
+    border: 1px solid #E4E7EC;
+    border-radius: 8px;
+    background: #FFFFFF;
+}
+
+.search-icon-setting {
+    position: absolute;
+    right: 12px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    /* color:#98A2B3;  */
+    cursor: pointer;
+}
+
+.messages-list {
+    background: #FFFFFF;
+    border: 1px solid #EEF1F5;
+    border-radius: 8px;
+    max-height: calc(100vh - 230px);
+    overflow-y: auto;
+}
+
+.message-row {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    border-bottom: 1px solid #EEF1F5;
+    cursor: pointer;
+}
+
+.message-row:hover {
+    background: #F9FAFB;
+}
+
+.message-row.active {
+    background: #EEF4FF;
+}
+
+.message-row:last-child {
+    border-bottom: none;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.msg-body {
+    flex: 1;
+}
+
+.msg-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #344054;
+}
+
+.msg-preview {
+    font-size: 12px;
+    color: #98A2B3;
+}
+
+.msg-meta {
+    font-size: 12px;
+    color: #98A2B3;
+}
+
+/* Chat panel */
+.chat-panel {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .2s ease;
+}
+
+.chat-panel.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.chat-thread {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.bubble-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+    align-items: flex-end;
+}
+
+.bubble-row.me {
+    flex-direction: row-reverse;
+}
+
+.bubble {
+    background: #EFF2F6;
+    border-radius: 12px;
+    padding: 12px 14px;
+    max-width: 420px;
+}
+
+.bubble.me {
+    background: #E8F0FF;
+}
+
+.bubble-time {
+    font-size: 11px;
+    color: #98A2B3;
+    margin-top: 6px;
+}
+
+.chat-input-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.chat-input-bar input {
+    flex: 1;
+    border: 1px solid #E4E7EC;
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.send-btn {
+    background: #013B9C;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .settings-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .setting-main {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .settings-container {
+        grid-template-columns: 1fr;
+    }
 }

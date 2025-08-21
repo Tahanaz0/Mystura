@@ -12,6 +12,13 @@ const Services = () => {
     const [showPropertyModal, setShowPropertyModal] = useState(false);
     const [showCreateServiceModal, setShowCreateServiceModal] = useState(false);
     const [showViewBookingModal, setShowViewBookingModal] = useState(false);
+    const [showBookingFormModal, setShowBookingFormModal] = useState(false);
+
+    // Booking form state
+    const [bookingDateIndex, setBookingDateIndex] = useState(0);
+    const [bookingTime, setBookingTime] = useState('10:00 AM');
+    const [selectedAddOns, setSelectedAddOns] = useState([]);
+    const [paymentMethod, setPaymentMethod] = useState('cash');
 
     // Form state for Create Service
     const [formData, setFormData] = useState({
@@ -229,6 +236,46 @@ const Services = () => {
         setShowModal(false);
         setSelectedService(null);
     };
+
+    // Booking form helpers
+    const toggleAddOn = (name) => {
+        setSelectedAddOns(prev => prev.includes(name) ? prev.filter(n => n !== name) : [...prev, name]);
+    };
+
+    const resetBookingForm = () => {
+        setBookingDateIndex(0);
+        setBookingTime('10:00 AM');
+        setSelectedAddOns([]);
+        setPaymentMethod('cash');
+    };
+
+    const openBookingForm = () => {
+        if (!selectedService) {
+            const fallback = servicesData[1] || servicesData[0] || null;
+            if (fallback) setSelectedService(fallback);
+        }
+        setShowBookingFormModal(true);
+    };
+
+    const closeBookingForm = () => {
+        setShowBookingFormModal(false);
+        resetBookingForm();
+    };
+
+    const parsePrice = (priceStr) => {
+        if (!priceStr) return 0;
+        const n = Number(String(priceStr).replace(/[^0-9.]/g, ''));
+        return isNaN(n) ? 0 : n;
+    };
+
+    const computeTotals = () => {
+        const base = parsePrice(selectedService?.price);
+        const addOnsTotal = (selectedService?.additionalServices || [])
+            .filter(s => selectedAddOns.includes(s.name))
+            .reduce((sum, s) => sum + parsePrice(s.price), 0);
+        const total = base + addOnsTotal;
+        return { base, addOnsTotal, total };
+    };
     return (
         <>
             <div className="service-main">
@@ -266,9 +313,26 @@ const Services = () => {
                 </div>
             </div>
 
-            {/* View Booking Button - Always Visible */}
-            <div className="view-booking" onClick={() => setShowViewBookingModal(true)} style={{
+            {/* Booking Button - Opens Booking Form Modal */}
+            <div className="view-booking" onClick={openBookingForm} style={{
                 margin: '30px auto',
+                padding: '20px 40px',
+                fontSize: '18px',
+                border: '3px solid #013B9C',
+                backgroundColor: '#013B9C',
+                color: 'white',
+                borderRadius: '30px',
+                cursor: 'pointer',
+                display: 'block',
+                width: 'fit-content',
+                textAlign: 'center',
+                fontWeight: 'bold',
+                boxShadow: '0 8px 25px rgba(1, 59, 156, 0.4)'
+            }}>Booking</div>
+
+            {/* View Booking Button - Opens Success/summary modal */}
+            <div className="view-booking" onClick={() => setShowViewBookingModal(true)} style={{
+                margin: '10px auto 30px',
                 padding: '20px 40px',
                 fontSize: '18px',
                 border: '3px solid #013B9C',
@@ -414,7 +478,7 @@ const Services = () => {
                         </div>
 
                         <div className="modal-footer">
-                            <button className="booking-btn">Booking</button>
+                            <button className="booking-btn" onClick={openBookingForm}>Booking</button>
                         </div>
                     </div>
                 </div>
@@ -788,6 +852,92 @@ const Services = () => {
 
                         <div className="modal-footer">
                             <button className="view-booking-btn">View Booking</button>
+                           
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Booking Form Modal */}
+            {showBookingFormModal && selectedService && (
+                <div className="modal-overlay" onClick={closeBookingForm}>
+                    <div className="modal-content booking-form-modal" onClick={(e) => e.stopPropagation()}>
+                        <div className="modal-header">
+                            <h2>Booking</h2>
+                            <button className="close-btn" onClick={closeBookingForm}>
+                                <FaTimes />
+                            </button>
+                        </div>
+                        <div className="modal-body">
+                            <div className="booking-form">
+                                <div className="booking-card">
+                                    <div className="service-summary">
+                                        <img src={selectedService.img} alt="service" />
+                                        <div>
+                                            <div className="service-subtitle-small">{selectedService.subtitle || selectedService.name}</div>
+                                            <div className="service-desc-small">{selectedService.description?.slice(0, 120)}...</div>
+                                        </div>
+                                    </div>
+                                    <div className="section">
+                                        <div className="section-title">Select Date</div>
+                                        <div className="date-pills">
+                                            {[0,1,2,3].map((i) => (
+                                                <button key={i} className={`pill ${bookingDateIndex===i?'active':''}`} onClick={() => setBookingDateIndex(i)}>
+                                                    <div className="pill-top">{['Today','Tomorrow','Wed','Thu'][i]}</div>
+                                                    <div className="pill-bottom">{15+i} Sep</div>
+                                                </button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="section">
+                                        <div className="section-title">Select Time</div>
+                                        <div className="time-grid">
+                                            {['10:00 AM','12:00 PM','2:00 PM','4:00 PM'].map(t => (
+                                                <button key={t} className={`time-btn ${bookingTime===t?'active':''}`} onClick={() => setBookingTime(t)}>{t}</button>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="section">
+                                        <div className="section-title">Additional Services</div>
+                                        <div className="addons-list">
+                                            {(selectedService.additionalServices||[]).map((s,idx) => (
+                                                <label key={idx} className="addon-item">
+                                                    <input type="checkbox" checked={selectedAddOns.includes(s.name)} onChange={() => setSelectedAddOns(prev => prev.includes(s.name) ? prev.filter(n => n !== s.name) : [...prev, s.name])} />
+                                                    <span>{s.name}</span>
+                                                    <span className="price-tag">{s.price}</span>
+                                                </label>
+                                            ))}
+                                        </div>
+                                    </div>
+                                    <div className="section totals">
+                                        {(() => { const { base, addOnsTotal, total } = computeTotals(); return (
+                                            <>
+                                                <div className="row"><span>Base price</span><span>${base}</span></div>
+                                                <div className="row"><span>Add-ons</span><span>${addOnsTotal}</span></div>
+                                                <div className="row total"><span>Total Price</span><span>${total}</span></div>
+                                            </>
+                                        )})()}
+                                    </div>
+                                    <div className="section">
+                                        <div className="section-title">Payment Method</div>
+                                        <div className="payment-list">
+                                            <label className="payment-item">
+                                                <input type="radio" name="pm" checked={paymentMethod==='cash'} onChange={() => setPaymentMethod('cash')} />
+                                                <span>Cash</span>
+                                            </label>
+                                            <label className="payment-item">
+                                                <input type="radio" name="pm" checked={paymentMethod==='wallet'} onChange={() => setPaymentMethod('wallet')} />
+                                                <span>Wallet</span>
+                                            </label>
+                                            <label className="payment-item">
+                                                <input type="radio" name="pm" checked={paymentMethod==='visa'} onChange={() => setPaymentMethod('visa')} />
+                                                <span>Visa - 0987</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button className="create-booking-btn">Create Booking</button>
+                            </div>
                         </div>
                     </div>
                 </div>

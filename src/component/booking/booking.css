@@ -1,6 +1,6 @@
 .booking-main-container {
     margin-top: 60px;
-    margin-left: 243px;
+    margin-left: 240px;
     background: #F5F7FA;
     width: 74vw;
     min-height: 100vh;
@@ -109,12 +109,19 @@
     display: flex;
     align-items: center;
     padding: 20px;
-    border: 1px solid #E8E8E8;
-    border-radius: 10px;
+    /* border: 1px solid #E8E8E8; */
+    /* border-radius: 10px; */
     background: #FAFAFA;
     transition: all 0.3s ease;
 }
-
+.time-slot.alt {
+    background: #FFFFFF;
+}
+.time-range1{
+    font-size: 14px;
+    /* color: #7F8C8D; */
+    background-color: #FFFFFF;
+}
 .time-slot:hover {
     background: #F0F0F0;
     border-color: #3498DB;
@@ -215,32 +222,41 @@
 }
 
 .page-btn {
-    padding: 8px 1px;
+    /* padding: 8px; */
     border: 1px solid #E8E8E8;
-    background: white;
-    color: #7F8C8D;
-    border-radius: 4px;
+    background: #E5E7EB;
+    /* color: #7F8C8D; */
+    border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
-    min-width: 40px;
+    /* min-width: 40px; */
+    text-align: center;
+}
+.page-btn2{
+    background-color: white;
+    border: 1px solid #E8E8E8;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
     text-align: center;
 }
 
 .page-btn:hover {
-    background: #F5F7FA;
-    border-color: #3498DB;
+    background: #013B9C;
+    /* border-color: #3498DB; */
+    color: white;
 }
 
-.page-btn.active {
+/* .page-btn.active {
     background: #3498DB;
     color: white;
     border-color: #3498DB;
-}
+} */
 
 /* Responsive Design */
 @media (max-width: 1200px) {
     .booking-main-container {
-        margin-left: 200px;
+        margin-left: 240px;
         width: 80vw;
         padding: 25px;
     }
@@ -249,10 +265,15 @@
         min-width: 180px;
     }
 }
+@media (max-width: 767px) {
+    .date-input{
+        width: 100%;
+    }
+}
 
 @media (max-width: 992px) {
     .booking-main-container {
-        margin-left: 180px;
+        margin-left: 240px;
         width: 85vw;
         padding: 20px;
     }
@@ -268,6 +289,13 @@
     .booking-button {
         padding: 6px 12px;
         font-size: 13px;
+    }
+}
+@media (max-width: 78px) {
+    .booking-main-container {
+        margin-left: 0;
+        width: 100%
+        /* padding: 20px; */
     }
 }
 

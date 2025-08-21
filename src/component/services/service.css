@@ -908,6 +908,72 @@
     text-align: center;
 }
 
+/* Booking Form Modal */
+.booking-form-modal {
+    width: 360px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.booking-card {
+    background: #fff;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.service-summary {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.service-summary img {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.service-subtitle-small {
+    font-weight: 700;
+}
+
+.service-desc-small {
+    color: #6c757d;
+    font-size: 12px;
+}
+
+.section { margin-top: 14px; }
+.section-title { font-weight: 700; margin-bottom: 8px; }
+
+.date-pills { display:flex; gap:8px; }
+.pill { border:1px solid #dee2e6; background:#fff; border-radius:10px; padding:8px 10px; cursor:pointer; }
+.pill.active { border-color:#013B9C; box-shadow:0 0 0 3px rgba(1,59,156,.1); }
+.pill .pill-top { font-weight:700; }
+.pill .pill-bottom { color:#6c757d; font-size:12px; }
+
+.time-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+.time-btn { border:1px solid #dee2e6; background:#fff; padding:8px 10px; border-radius:8px; cursor:pointer; }
+.time-btn.active { border-color:#013B9C; background:#f0f4ff; }
+
+.addons-list { display:flex; flex-direction:column; gap:8px; }
+.addon-item { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:8px; border:1px solid #e9ecef; border-radius:8px; padding:8px 10px; background:#f8f9fa; }
+.price-tag { font-weight:700; }
+
+.totals .row { display:flex; justify-content:space-between; margin:4px 0; }
+.totals .total { font-weight:800; }
+
+.payment-list { display:flex; flex-direction:column; gap:8px; }
+.payment-item { display:flex; gap:8px; align-items:center; }
+
+.create-booking-btn { width:100%; padding:12px; border:none; border-radius:8px; background:#013B9C; color:#fff; font-weight:700; cursor:pointer; }
+
 .view-booking-modal .modal-header {
     border-bottom: none;
     justify-content: flex-end;
