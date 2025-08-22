@@ -1,5 +1,5 @@
 .setting-main {
-    width: 98%;
+    width: 80vw;
     /* min-height: 100vh; */
     background: #F5F7FA;
     margin-left: 250px;
@@ -159,11 +159,11 @@
 .chat-panel {
     background: #FFFFFF;
     width: 100%;
-    min-width: 0;
+    /* min-width: 0; */
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     padding: 18px;
-    min-height: calc(100vh - 230px);
+    /* min-height: calc(100vh - 230px); */
 
     display: none;
     flex-direction: column;

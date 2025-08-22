@@ -122,7 +122,7 @@ const Booking = () => {
                                         </div>
                                     ))
                                 ) : (
-                                    <span className="no-bookings">Available</span>
+                                    <span className="no-booking"></span>
                                 )}
                             </div>
                         </div>
@@ -135,11 +135,17 @@ const Booking = () => {
                     Showing 1 to 3 of 12 entries
                 </div>
                 <div className="pagination-booking">
-                    <button className="page-btn2"><FaAngleLeft /></button>
+                    <button className="page-btn2"><FaAngleLeft 
+                    style={{
+                        marginTop:'3px'
+                    }} /></button>
                     <button className="page-btn active">1</button>
                     <button className="page-btn">2</button>
                     <button className="page-btn">3</button>
-                    <button className="page-btn2"><FaAngleRight /></button>
+                    <button className="page-btn2"><FaAngleRight 
+                    style={{
+                        marginTop:'3px'
+                    }}/></button>
                 </div>
             </div>
         </div>

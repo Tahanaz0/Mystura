@@ -17,11 +17,7 @@ const Dashboard = () => {
     return (
         <>
             <div className="dash-container">
-                <div className="dash-actions">
-                    <button className="notif-btn" onClick={() => setIsNotifOpen(true)}>
-                        Notifications
-                    </button>
-                </div>
+                
                 <div className="boxes">
                     <div className="dash-item">
                         <div className="child-item">
@@ -56,7 +52,14 @@ const Dashboard = () => {
                   <Barchart/>  
                 </div>
                 
+                
             </div>
+            <br />
+            <div className="dash-actions">
+                    <button className="notif-btn" onClick={() => setIsNotifOpen(true)}>
+                        Notifications
+                    </button>
+                </div>
             {/* old button removed; using top-right button */}
 
             {isNotifOpen && (

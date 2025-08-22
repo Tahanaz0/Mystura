@@ -1,8 +1,8 @@
 .booking-main-container {
     margin-top: 60px;
-    margin-left: 240px;
+    margin-left: 255px;
     background: #F5F7FA;
-    width: 74vw;
+    width: 100%;
     min-height: 100vh;
     padding: 30px;
     font-family: "Nunito", sans-serif;
@@ -244,6 +244,10 @@
 .page-btn:hover {
     background: #013B9C;
     /* border-color: #3498DB; */
+    color: white;
+}
+.page-btn2:hover{
+    background-color: #013B9C;
     color: white;
 }
 

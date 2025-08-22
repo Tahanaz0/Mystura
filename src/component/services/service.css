@@ -3,9 +3,9 @@
     margin-top: 60px;
     margin-left: 243px;
     background: #F5F7FA;
-    width: 77vw; 
-    min-height: 100vh;          
-    overflow-x: hidden;        
+    width: 77vw;
+    min-height: 100vh;
+    overflow-x: hidden;
     text-align: center;
     padding: 10px;
     display: flex;
@@ -32,7 +32,7 @@
     padding-bottom: 5px;
 }
 
-.btn1:hover{
+.btn1:hover {
     background-color: #013B9C;
     color: white;
 }
@@ -56,7 +56,7 @@
     background-color: #FFFFFF;
 }
 
-.service-img{
+.service-img {
     width: 100%;
     display: block;
     background-color: #455A64;
@@ -73,18 +73,18 @@
     border-radius: 10px 10px 0 0;
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit: cover;
     display: block;
 }
 
-.service-text{
+.service-text {
     display: flex;
     justify-content: space-between;
     padding: 5px;
     gap: 10px;
 }
 
-.service-name{
+.service-name {
     font-weight: 600;
     font-style: bold;
 }
@@ -208,7 +208,7 @@
     position: absolute;
     bottom: 15px;
     right: 15px;
-    color: #013B9C; 
+    color: #013B9C;
     border: 1px solid #013B9C;
     padding: 5px 12px;
     border-radius: 20px;
@@ -221,7 +221,7 @@
     top: 15px;
     right: 15px;
     width: 50px;
-    height: 40px; 
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -356,7 +356,7 @@
     cursor: pointer;
 }
 
-.service-option-label{
+.service-option-label {
     display: flex;
     justify-content: space-between;
     width: 100%;
@@ -949,30 +949,114 @@
     font-size: 12px;
 }
 
-.section { margin-top: 14px; }
-.section-title { font-weight: 700; margin-bottom: 8px; }
+.section {
+    margin-top: 14px;
+}
 
-.date-pills { display:flex; gap:8px; }
-.pill { border:1px solid #dee2e6; background:#fff; border-radius:10px; padding:8px 10px; cursor:pointer; }
-.pill.active { border-color:#013B9C; box-shadow:0 0 0 3px rgba(1,59,156,.1); }
-.pill .pill-top { font-weight:700; }
-.pill .pill-bottom { color:#6c757d; font-size:12px; }
+.section-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
 
-.time-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
-.time-btn { border:1px solid #dee2e6; background:#fff; padding:8px 10px; border-radius:8px; cursor:pointer; }
-.time-btn.active { border-color:#013B9C; background:#f0f4ff; }
+.date-pills {
+    display: flex;
+    gap: 8px;
+}
 
-.addons-list { display:flex; flex-direction:column; gap:8px; }
-.addon-item { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:8px; border:1px solid #e9ecef; border-radius:8px; padding:8px 10px; background:#f8f9fa; }
-.price-tag { font-weight:700; }
+.pill {
+    border: 1px solid #dee2e6;
+    background: #fff;
+    border-radius: 10px;
+    padding: 8px 10px;
+    cursor: pointer;
+}
 
-.totals .row { display:flex; justify-content:space-between; margin:4px 0; }
-.totals .total { font-weight:800; }
+.pill.active {
+    border-color: #013B9C;
+    box-shadow: 0 0 0 3px rgba(1, 59, 156, .1);
+}
 
-.payment-list { display:flex; flex-direction:column; gap:8px; }
-.payment-item { display:flex; gap:8px; align-items:center; }
+.pill .pill-top {
+    font-weight: 700;
+}
 
-.create-booking-btn { width:100%; padding:12px; border:none; border-radius:8px; background:#013B9C; color:#fff; font-weight:700; cursor:pointer; }
+.pill .pill-bottom {
+    color: #6c757d;
+    font-size: 12px;
+}
+
+.time-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.time-btn {
+    border: 1px solid #dee2e6;
+    background: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.time-btn.active {
+    border-color: #013B9C;
+    background: #f0f4ff;
+}
+
+.addons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.addon-item {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 8px 10px;
+    background: #f8f9fa;
+}
+
+.price-tag {
+    font-weight: 700;
+}
+
+.totals .row {
+    display: flex;
+    justify-content: space-between;
+    margin: 4px 0;
+}
+
+.totals .total {
+    font-weight: 800;
+}
+
+.payment-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.payment-item {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.create-booking-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #013B9C;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
 
 .view-booking-modal .modal-header {
     border-bottom: none;
@@ -1054,7 +1138,7 @@
     }
 
     .btn1 {
-        width: 50vw;
+        width: 85vw;
     }
 
     .service-mid {
@@ -1066,28 +1150,28 @@
         max-width: 95%;
         margin: 10px;
     }
-    
+
     .modal-header,
     .modal-body,
     .modal-footer {
         padding: 15px 20px;
     }
-    
+
     .action-buttons {
         flex-wrap: wrap;
         gap: 8px;
     }
-    
+
     .action-btn {
         flex: 1 1 calc(50% - 4px);
         padding: 12px 8px;
     }
-    
+
     .service-location {
         grid-template-columns: 1fr;
         gap: 15px;
     }
-    
+
     .map-snippet {
         width: 100%;
         height: 60px;
@@ -1096,76 +1180,76 @@
     .property-modal {
         width: 95% !important;
     }
-    
+
     .rating-section {
         flex-direction: column;
         gap: 20px;
         padding: 15px;
     }
-    
+
     .overall-rating {
         min-width: auto;
         text-align: center;
     }
-    
+
     .rating-number {
         font-size: 36px;
     }
-    
+
     .rating-stars {
         gap: 3px;
     }
-    
+
     .star-icon {
         font-size: 20px;
     }
-    
+
     .filter-section {
         flex-wrap: wrap;
         justify-content: center;
         gap: 8px;
         padding: 15px;
     }
-    
+
     .filter-btn {
         padding: 6px 16px;
         font-size: 12px;
         min-width: 80px;
     }
-    
+
     .reviews-section {
         gap: 15px;
     }
-    
+
     .review-card {
         padding: 15px;
     }
-    
+
     .review-header {
         gap: 10px;
         margin-bottom: 10px;
     }
-    
+
     .profile-pic {
         width: 40px;
         height: 40px;
     }
-    
+
     .review-text {
         font-size: 14px;
         line-height: 1.5;
     }
-    
+
     .review-footer {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
     }
-    
+
     .review-actions {
         gap: 3px;
     }
-    
+
     .fire-icon {
         font-size: 14px;
     }
@@ -1174,12 +1258,12 @@
         width: 95%;
         margin: 10px;
     }
-    
+
     .additional-services-input {
         flex-direction: column;
         align-items: stretch;
     }
-    
+
     .photo-thumbnails {
         justify-content: center;
     }
@@ -1188,11 +1272,11 @@
         width: 95%;
         margin: 10px;
     }
-    
+
     .booking-success-illustration {
         height: 150px;
     }
-    
+
     .booking-success-message h2 {
         font-size: 20px;
     }
@@ -1203,54 +1287,54 @@
         width: 98%;
         margin: 5px;
     }
-    
+
     .rating-section {
         padding: 10px;
         gap: 15px;
     }
-    
+
     .rating-number {
         font-size: 32px;
     }
-    
+
     .rating-stars .star-icon {
         font-size: 18px;
     }
-    
+
     .filter-section {
         padding: 10px;
         gap: 6px;
     }
-    
+
     .filter-btn {
         padding: 5px 12px;
         font-size: 11px;
         min-width: 70px;
     }
-    
+
     .review-card {
         padding: 12px;
     }
-    
+
     .review-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
     }
-    
+
     .profile-pic {
         width: 35px;
         height: 35px;
     }
-    
+
     .reviewer-name {
         font-size: 14px;
     }
-    
+
     .review-text {
         font-size: 13px;
     }
-    
+
     .review-time {
         font-size: 12px;
     }
@@ -1258,11 +1342,11 @@
     .view-booking-modal .modal-body {
         padding: 0 20px 20px;
     }
-    
+
     .booking-success-illustration {
         height: 120px;
     }
-    
+
     .booking-success-message h2 {
         font-size: 18px;
     }
@@ -1277,30 +1361,30 @@
     .property-modal {
         width: 60% !important;
     }
-    
+
     .rating-section {
         gap: 30px;
         padding: 18px;
     }
-    
+
     .rating-number {
         font-size: 42px;
     }
-    
+
     .filter-section {
         gap: 12px;
         padding: 18px;
     }
-    
+
     .filter-btn {
         padding: 7px 18px;
         font-size: 13px;
     }
-    
+
     .review-card {
         padding: 18px;
     }
-    
+
     .profile-pic {
         width: 45px;
         height: 45px;

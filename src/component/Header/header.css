@@ -111,13 +111,13 @@
 }
 
 .side-bar-logout2 {
-  position: absolute;
-  bottom: 20px;
+  /* position: absolute; */
+  /* bottom: 20px; */
   left: 0;
   right: 0;
   /* width: 100%; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   /* align-items: center; */
   /* justify-content: center; */
   margin-left: 75px;
@@ -132,15 +132,15 @@
 
 .side-bar-logout-item2 {
   /* padding: 1px 20px; */
-  font-size: 15px;
+  /* font-size: 15px; */
   color: #b0b0b0;
   border-radius: 8px;
   cursor: pointer;
   display: flex;
   /* align-items: center; */
-  font-weight: 400;
+  /* font-weight: 400; */
   text-decoration: none;
-  /* width: 170px; */
+  /* width: 100%; */
   gap: 10px;
 }
 
