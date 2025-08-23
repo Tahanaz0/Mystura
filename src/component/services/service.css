@@ -141,6 +141,7 @@
 .modal-content-booking-form-modal {
     background: white;
     border-radius: 20px;
+    width: 480px;
     max-height: 100vh;
     height: auto;
     overflow-y: auto;
@@ -494,6 +495,17 @@
 /* Property View Modal */
 .property-modal {
     width: 43%;
+}
+.modal-content-property-modal {
+    background: white;
+    border-radius: 20px;
+    max-height: 100vh;
+    height: auto;
+    width: 420px;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+
 }
 
 .rating-section {

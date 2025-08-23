@@ -499,7 +499,7 @@ const Services = () => {
             {/* Property View Modal */}
             {showPropertyModal && (
                 <div className="modal-overlay" onClick={() => setShowPropertyModal(false)}>
-                    <div className="modal-content property-modal" onClick={(e) => e.stopPropagation()}>
+                    <div className="modal-content-property-modal" onClick={(e) => e.stopPropagation()}>
                         <div className="modal-header">
                             <h2>Property View</h2>
                             <button className="close-btn" onClick={() => setShowPropertyModal(false)}>
