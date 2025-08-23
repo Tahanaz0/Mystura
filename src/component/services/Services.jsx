@@ -624,7 +624,7 @@ const Services = () => {
             {/* Create Service Modal */}
             {showCreateServiceModal && (
                 <div className="modal-overlay" onClick={closeCreateServiceModal}>
-                    <div className="modal-content create-service-modal" onClick={(e) => e.stopPropagation()}>
+                    <div className="modal-content-create-service-modal" onClick={(e) => e.stopPropagation()}>
                         <div className="modal-header">
                             <h2>Create Service</h2>
                             <button className="close-btn" onClick={closeCreateServiceModal}>

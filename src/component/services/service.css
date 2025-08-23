@@ -3,7 +3,7 @@
     margin-top: 60px;
     margin-left: 243px;
     background: #F5F7FA;
-    width: 77vw;
+    width: 79vw;
     min-height: 100vh;
     overflow-x: hidden;
     text-align: center;
@@ -142,6 +142,16 @@
     background: white;
     border-radius: 20px;
     width: 480px;
+    max-height: 100vh;
+    height: auto;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.modal-content-create-service-modal {
+    background: white;
+    border-radius: 20px;
+    width: 500px;
     max-height: 100vh;
     height: auto;
     overflow-y: auto;
