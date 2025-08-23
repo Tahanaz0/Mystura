@@ -861,7 +861,7 @@ const Services = () => {
             {/* Booking Form Modal */}
             {showBookingFormModal && selectedService && (
                 <div className="modal-overlay" onClick={closeBookingForm}>
-                    <div className="modal-content booking-form-modal" onClick={(e) => e.stopPropagation()}>
+                    <div className="modal-content-booking-form-modal" onClick={(e) => e.stopPropagation()}>
                         <div className="modal-header">
                             <h2>Booking</h2>
                             <button className="close-btn" onClick={closeBookingForm}>

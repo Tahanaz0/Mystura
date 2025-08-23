@@ -4,8 +4,6 @@ import UserAddForm from './UserAddForm';
 import UserDelete from './UserDelete';
 import { FiEdit, FiTrash } from 'react-icons/fi';
 
-
-
 const User = () => {
   const [users, setUsers] = useState([
     {
@@ -33,12 +31,12 @@ const User = () => {
       status: 'Decline',
     },
     {
-      name: 'Daniel',
-      email: 'daniel@gmail.com',
+      name: 'Jessica',
+      email: 'jessica@gmail.com',
       phone: '+92 123456789',
-      gender: 'Male',
-      userType: 'Provider',
-      status: 'Decline',
+      gender: 'Female',
+      userType: 'User',
+      status: 'Moderate',
     },
     {
       name: 'Daniel',
@@ -53,8 +51,8 @@ const User = () => {
       email: 'daniel@gmail.com',
       phone: '+92 123456789',
       gender: 'Male',
-      userType: 'Provider',
-      status: 'Decline',
+      userType: 'Admin',
+      status: 'Active',
     },
     {
       name: 'Daniel',
@@ -69,13 +67,17 @@ const User = () => {
       email: 'daniel@gmail.com',
       phone: '+92 123456789',
       gender: 'Male',
-      userType: 'Provider',
-      status: 'Decline',
+      userType: 'Admin',
+      status: 'Active',
     },
-
   ]);
+
   const [openDropdown, setOpenDropdown] = useState(null);
   const dropdownRef = useRef(null);
+
+  // 🔹 Edit states
+  const [editIndex, setEditIndex] = useState(null);
+  const [editUser, setEditUser] = useState(null);
 
   const handleToggleDropdown = (index) => {
     setOpenDropdown(openDropdown === index ? null : index);
@@ -91,19 +93,42 @@ const User = () => {
     document.addEventListener('mousedown', handleClickOutside);
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
+
+  // ✅ Add new user
   const handleAddUser = (newUser) => {
     setUsers([...users, newUser]);
   };
+
+  // ✅ Delete user
   const handleDeleteUser = (indexToDelete) => {
     const updatedUsers = users.filter((_, index) => index !== indexToDelete);
     setUsers(updatedUsers);
   };
 
+  // ✅ Start Edit
+  const handleEditUser = (index) => {
+    setEditIndex(index);
+    setEditUser(users[index]);
+    setOpenDropdown(null);
+  };
+
+  // ✅ Handle input change
+  const handleChange = (e) => {
+    setEditUser({ ...editUser, [e.target.name]: e.target.value });
+  };
+
+  // ✅ Save edited user
+  const handleSaveEdit = () => {
+    const updatedUsers = [...users];
+    updatedUsers[editIndex] = editUser;
+    setUsers(updatedUsers);
+    setEditIndex(null);
+    setEditUser(null);
+  };
 
   return (
     <>
       <UserAddForm onAddUser={handleAddUser} />
-
 
       <div className="table-container">
         <table className="user-table">
@@ -121,43 +146,99 @@ const User = () => {
           <tbody>
             {users.map((user, index) => (
               <tr key={index}>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>{user.phone}</td>
-                <td>{user.gender}</td>
-                <td>{user.userType}</td>
-                <td>
-                  <span className={`status ${user.status.toLowerCase()}`}>
-                    {user.status}
-                  </span>
-                </td>
-                <td className="actions-cell">
-                  <span
-                    className="dots"
-                    onClick={() => handleToggleDropdown(index)}
-                  >
-                    ⋮
-                  </span>
-                  {openDropdown === index && (
-                    <div className="dropdown" ref={dropdownRef}>
-                      <button>
-                        <FiEdit /> Edit
-                      </button>
-                      <UserDelete onDelete={() => handleDeleteUser(index)}>
-                        <FiTrash style={{
-                          color:'black'
-                        }}/> Delete
-                      </UserDelete>
-                    </div>
-                  )}
-                </td>
+                {editIndex === index ? (
+                  <>
+                    <td>
+                      <input
+                        name="name"
+                        value={editUser.name}
+                        onChange={handleChange}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        name="email"
+                        value={editUser.email}
+                        onChange={handleChange}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        name="phone"
+                        value={editUser.phone}
+                        onChange={handleChange}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        name="gender"
+                        value={editUser.gender}
+                        onChange={handleChange}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        name="userType"
+                        value={editUser.userType}
+                        onChange={handleChange}
+                      />
+                    </td>
+                    <td>
+                      <input
+                        name="status"
+                        value={editUser.status}
+                        onChange={handleChange}
+                      />
+                    </td>
+                    <td>
+                      <button onClick={handleSaveEdit}>Save</button>
+                      <button onClick={() => setEditIndex(null)}>Cancel</button>
+                    </td>
+                  </>
+                ) : (
+                  <>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td>{user.phone}</td>
+                    <td>{user.gender}</td>
+                    <td>{user.userType}</td>
+                    <td>
+                      <span className={`status ${user.status.toLowerCase()}`}>
+                        {user.status}
+                      </span>
+                    </td>
+                    <td className="actions-cell">
+                      <span
+                        className="dots"
+                        onClick={() => handleToggleDropdown(index)}
+                      >
+                        ⋮
+                      </span>
+                      {openDropdown === index && (
+                        <div className="dropdown" ref={dropdownRef}>
+                          <button onClick={() => handleEditUser(index)}>
+                            <FiEdit /> Edit
+                          </button>
+                          <UserDelete
+                            onDelete={() => {
+                              handleDeleteUser(index);   // ✅ remove item
+                              setOpenDropdown(null);     // ✅ close menu after delete
+                            }}
+                          >
+                            <FiTrash style={{ color: 'black' }} /> Delete
+                          </UserDelete>
+                        </div>
+                      )}
+                    </td>
+                  </>
+                )}
               </tr>
             ))}
           </tbody>
         </table>
 
         <div className="footer">
-          <p>Showing 1 to {users.length} of 12 entries</p>
+          <p>Showing 1 to {users.length} of {users.length} entries</p>
           <div className="pagination">
             <button className="prev">◀</button>
             <button className="page active">1</button>
@@ -167,11 +248,6 @@ const User = () => {
           </div>
         </div>
       </div>
-
-      {/* Floating Plus Button */}
-      {/* <div className="add-card">
-        <img className="add-icon" src="/image/add.png" alt="plus" />
-      </div> */}
     </>
   );
 };
