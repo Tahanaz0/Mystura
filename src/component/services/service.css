@@ -142,7 +142,21 @@
     background: white;
     border-radius: 20px;
     width: 480px;
-    max-height: 100vh;
+    max-height: 95vh;
+    height: auto;
+    overflow-y: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+.modal-content-service-full {
+    background: white;
+    border-radius: 20px;
+    width: 480px;
+    max-height: 95vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: auto;
     overflow-y: auto;
     position: relative;
@@ -152,7 +166,9 @@
     background: white;
     border-radius: 20px;
     width: 500px;
-    max-height: 100vh;
+    max-height: 95vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: auto;
     overflow-y: auto;
     position: relative;
@@ -509,7 +525,9 @@
 .modal-content-property-modal {
     background: white;
     border-radius: 20px;
-    max-height: 100vh;
+    max-height: 95vh;
+    margin-top: 20px;
+    margin-bottom: 20px;
     height: auto;
     width: 420px;
     overflow-y: auto;
@@ -1032,17 +1050,24 @@
     flex-direction: column;
     gap: 8px;
 }
-
 .addon-item {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: 1fr auto auto; /* name --- price --- checkbox */
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     border: 1px solid #e9ecef;
     border-radius: 8px;
     padding: 8px 10px;
     background: #f8f9fa;
-}
+  }
+  
+  .addon-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px; /* name aur price ke darmiyan gap */
+    width: 100%;
+  }
 
 .price-tag {
     font-weight: 700;
@@ -1067,6 +1092,7 @@
 .payment-item {
     display: flex;
     gap: 8px;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -1085,6 +1111,7 @@
     border-bottom: none;
     justify-content: flex-end;
     padding: 20px 20px 0 20px;
+    margin: 10px;
 }
 
 .view-booking-modal .modal-body {

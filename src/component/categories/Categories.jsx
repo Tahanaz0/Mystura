@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { MdMoreVert } from "react-icons/md";
 import { FiEdit, FiTrash } from "react-icons/fi";
 import "./category.css";
@@ -88,10 +88,24 @@ const CategoryGrid = () => {
 
 const CategoryCard = ({ title, icon, onDelete, onEdit }) => {
   const [showMenu, setShowMenu] = useState(false);
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setShowMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
-      <div className="dots" onClick={() => setShowMenu(!showMenu)}>
+      <div className="dots" ref={menuRef} onClick={() => setShowMenu(!showMenu)}>
         <MdMoreVert size={20} />
         {showMenu && (
           <div className="dropdown-menu">

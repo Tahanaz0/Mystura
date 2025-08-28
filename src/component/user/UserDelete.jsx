@@ -25,7 +25,7 @@ const UserDelete = ({ onDelete, children }) => {
                   setOpen(false); // close modal
                 }}
               >
-                Yes, delete
+                Delete
               </button>
               <button className="ud-cancel" onClick={() => setOpen(false)}>
                 Cancel
