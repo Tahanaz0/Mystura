@@ -150,6 +150,18 @@
     position: relative;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
+.modal-content-view-booking-modal {
+    background: white;
+    border-radius: 20px;
+    width: 480px;
+    max-height: 95vh;
+    height: auto;
+    overflow-y: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
 .modal-content-service-full {
     background: white;
     border-radius: 20px;
@@ -445,7 +457,22 @@
     font-size: 12px;
     gap: 5px;
 }
+.payment-item-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.payment-item-content-wallet {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
+}
+.payment-item-content-visa {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 .booking-btn {
     background: #013B9C;
     color: white;

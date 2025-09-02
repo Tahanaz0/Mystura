@@ -6,7 +6,7 @@ const ViewBookingModal = ({ showViewBookingModal, setShowViewBookingModal }) => 
 
   return (
     <div className="modal-overlay" onClick={() => setShowViewBookingModal(false)}>
-      <div className="modal-content view-booking-modal" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-content-view-booking-modal" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <button className="close-btn" onClick={() => setShowViewBookingModal(false)}>
             <FaTimes />

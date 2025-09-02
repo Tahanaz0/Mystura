@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './setting.css'
-import { IoSearch } from 'react-icons/io5';
+import { IoSearch, IoArrowBack } from 'react-icons/io5';
+
 const Setting = () => {
     const messages = [
         { id: 1, name: 'Courtney', preview: 'Euismod tortor sed eu etiam.', time: '15 mins', avatar: '/image/profile.png' },
@@ -12,6 +13,7 @@ const Setting = () => {
         { id: 7, name: 'Guy Hawkins', preview: 'Adipiscing venenatis at orci. Vivamus sodales sed amet.', time: '18:05 PM', avatar: '/image/profile.png' },
         { id: 8, name: 'Ewan Lost', preview: 'Thank you !', time: '10:30 AM', avatar: '/image/profile.png' }
     ];
+
     const [selectedId, setSelectedId] = useState(null);
 
     const conversations = {
@@ -22,36 +24,48 @@ const Setting = () => {
             { from: 'me', time: '08:23 AM', text: 'I booked a cleaning service for this Saturday, but I just realized I need to reschedule it for next Wednesday instead. Can I change the date?' },
             { from: 'them', time: '08:24 AM', text: 'Yes, we can definitely help you with that!' }
         ],
-        1: [ { from: 'them', time: '09:10 AM', text: 'Hello Courtney 👋' } ],
-        2: [ { from: 'them', time: '09:15 AM', text: 'Hi Devon!' } ],
-        4: [ { from: 'them', time: '11:05 AM', text: 'Hi Marvin' } ],
-        5: [ { from: 'them', time: '01:20 PM', text: 'Hi Cameron' } ],
-        6: [ { from: 'them', time: '10:03 AM', text: 'Hi again!' } ],
-        7: [ { from: 'them', time: '06:05 PM', text: 'Hello Guy' } ],
-        8: [ { from: 'them', time: '10:30 AM', text: 'Hello Ewan' } ]
+        1: [{ from: 'them', time: '09:10 AM', text: 'Hello Courtney 👋' }],
+        2: [{ from: 'them', time: '09:15 AM', text: 'Hi Devon!' }],
+        4: [{ from: 'them', time: '11:05 AM', text: 'Hi Marvin' }],
+        5: [{ from: 'them', time: '01:20 PM', text: 'Hi Cameron' }],
+        6: [{ from: 'them', time: '10:03 AM', text: 'Hi again!' }],
+        7: [{ from: 'them', time: '06:05 PM', text: 'Hello Guy' }],
+        8: [{ from: 'them', time: '10:30 AM', text: 'Hello Ewan' }]
     };
+
     return (
         <div className='setting-main'>
-            <div className={`settings-container ${selectedId ? 'chat-open' : ''}`}>
+            <div className={`settings-container ${selectedId ? 'chat-mode' : ''}`}>
+
+                {/* Sidebar (hide when chat open) */}
                 {!selectedId && (
-                <div className="settings-sidebar">
-                    <div className="sidebar-item">
-                        <span>Privacy Policy</span>
-                        <span className="chevron">›</span>
+                    <div className="settings-sidebar">
+                        <div className="sidebar-item">
+                            <span>Privacy Policy</span>
+                            <span className="chevron">›</span>
+                        </div>
+                        <div className="sidebar-item">
+                            <span>Terms and Conditions</span>
+                            <span className="chevron">›</span>
+                        </div>
+                        <div className="sidebar-item active">
+                            <span>Messages</span>
+                            <span className="chevron">›</span>
+                        </div>
                     </div>
-                    <div className="sidebar-item">
-                        <span>Terms and Conditions</span>
-                        <span className="chevron">›</span>
-                    </div>
-                    <div className="sidebar-item active">
-                        <span>Messages</span>
-                        <span className="chevron">›</span>
-                    </div>
-                </div>
                 )}
 
+                {/* Messages list */}
                 <div className="messages-panel">
-                    <div className="panel-header">Messages</div>
+                    <div className="panel-header">
+                        {selectedId && (
+                            <span className="back-btn" onClick={() => setSelectedId(null)}>
+                                <IoArrowBack size={20} /> 
+                            </span>
+                        )}
+                        Messages
+                    </div>
+
                     <div className="search-wrapper-setting">
                         <input type="text" className="search-input-setting" placeholder="Search Messages" />
                         <span className="search-icon-setting"><IoSearch /></span>
@@ -59,7 +73,11 @@ const Setting = () => {
 
                     <div className="messages-list">
                         {messages.map(m => (
-                            <div key={m.id} className={`message-row ${selectedId===m.id ? 'active' : ''}`} onClick={() => setSelectedId(m.id)}>
+                            <div
+                                key={m.id}
+                                className={`message-row ${selectedId === m.id ? 'active' : ''}`}
+                                onClick={() => setSelectedId(m.id)}
+                            >
                                 <img className="avatar" src={m.avatar} alt={m.name} />
                                 <div className="msg-body">
                                     <div className="msg-name">{m.name}</div>
@@ -71,23 +89,26 @@ const Setting = () => {
                     </div>
                 </div>
 
-                <div className={`chat-panel ${selectedId ? 'visible' : ''}`}>
-                    <div className="chat-thread">
-                        {(conversations[selectedId] || []).map((m, idx) => (
-                            <div key={idx} className={`bubble-row ${m.from}`}>
-                                <img className="avatar" src={'/image/profile.png'} alt="avatar" />
-                                <div>
-                                    <div className={`bubble ${m.from}`}>{m.text}</div>
-                                    <div className="bubble-time">{m.time}</div>
+                {/* Chat panel */}
+                {selectedId && (
+                    <div className="chat-panel visible">
+                        <div className="chat-thread">
+                            {(conversations[selectedId] || []).map((m, idx) => (
+                                <div key={idx} className={`bubble-row ${m.from}`}>
+                                    <img className="avatar" src={'/image/profile.png'} alt="avatar" />
+                                    <div>
+                                        <div className={`bubble ${m.from}`}>{m.text}</div>
+                                        <div className="bubble-time">{m.time}</div>
+                                    </div>
                                 </div>
-                            </div>
-                        ))}
+                            ))}
+                        </div>
+                        <div className="chat-input-bar">
+                            <input type="text" placeholder="Type a message" />
+                            <button className="send-btn">Send</button>
+                        </div>
                     </div>
-                    <div className="chat-input-bar">
-                        <input type="text" placeholder="Type a message" />
-                        <button className="send-btn">Send</button>
-                    </div>
-                </div>
+                )}
             </div>
         </div>
     )

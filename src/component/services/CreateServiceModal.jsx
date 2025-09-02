@@ -1,19 +1,43 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import { FaTimes, FaPlus, FaCamera, FaMapMarkerAlt } from "react-icons/fa";
+import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+const containerStyle = {
+  width: '100%',
+  height: '250px'
+};
 
-const CreateServiceModal = ({ 
-  showCreateServiceModal, 
-  closeCreateServiceModal, 
-  formData, 
-  handleInputChange, 
-  additionalServices, 
-  newService, 
-  setNewService, 
-  handleAddService, 
-  handleRemoveService, 
-  handleSubmit 
+const center = {
+  lat: 24.8607, // Karachi latitude
+  lng: 67.0011  // Karachi longitude
+};
+
+const CreateServiceModal = ({
+  showCreateServiceModal,
+  closeCreateServiceModal,
+  formData,
+  handleInputChange,
+  additionalServices,
+  newService,
+  setNewService,
+  handleAddService,
+  handleRemoveService,
+  handleSubmit
 }) => {
+  const [photos, setPhotos] = useState([]);
+  const fileInputRef = useRef(null);
+
   if (!showCreateServiceModal) return null;
+
+  // 📌 File select or drop handle
+  const handleFiles = (files) => {
+    const newPhotos = Array.from(files).map(file => URL.createObjectURL(file));
+    setPhotos(prev => [...prev, ...newPhotos]);
+  };
+
+  const handleDrop = (e) => {
+    e.preventDefault();
+    handleFiles(e.dataTransfer.files);
+  };
 
   return (
     <div className="modal-overlay" onClick={closeCreateServiceModal}>
@@ -27,6 +51,8 @@ const CreateServiceModal = ({
 
         <div className="modal-body">
           <form className="create-service-form" onSubmit={handleSubmit}>
+
+            {/* 🔹 Select Provider */}
             <div className="form-group">
               <label>Select Provider</label>
               <select
@@ -40,33 +66,47 @@ const CreateServiceModal = ({
               </select>
             </div>
 
+            {/* 🔹 Photos with Drag & Drop */}
             <div className="form-group">
               <label>Photos</label>
-              <div className="photo-upload-section">
-                <button type="button" className="photo-upload-btn">
-                  <FaCamera />
-                  Photo
+              <div
+                className="photo-upload-section"
+                onDragOver={(e) => e.preventDefault()}
+                onDrop={handleDrop}
+              >
+                {/* Hidden input */}
+                <input
+                  type="file"
+                  multiple
+                  accept="image/*"
+                  ref={fileInputRef}
+                  style={{ display: "none" }}
+                  onChange={(e) => handleFiles(e.target.files)}
+                />
+
+                {/* Button for file picker */}
+                <button
+                  type="button"
+                  className="photo-upload-btn"
+                  onClick={() => fileInputRef.current.click()}
+                >
+                  <FaCamera /> Upload Photos
                 </button>
+
+                {/* Show selected thumbnails */}
                 <div className="photo-thumbnails">
-                  <div className="photo-thumbnail">
-                    <img src="/image/servic.png" alt="Service" />
-                  </div>
-                  <div className="photo-thumbnail">
-                    <img src="/image/pett.png" alt="Service" />
-                  </div>
-                  <div className="photo-thumbnail">
-                    <img src="/image/paint.png" alt="Service" />
-                  </div>
-                  <div className="photo-thumbnail">
-                    <img src="/image/landScap.png" alt="Service" />
-                  </div>
-                  <div className="photo-thumbnail add-more">
-                    <span>+5</span>
-                  </div>
+                  {photos.map((src, idx) => (
+                    <div key={idx} className="photo-thumbnail">
+                      <img src={src} alt="Service" />
+                    </div>
+                  ))}
                 </div>
+
+                <p className="drag-text">Drag & Drop photos here</p>
               </div>
             </div>
 
+            {/* 🔹 Category */}
             <div className="form-group">
               <label>Category</label>
               <select
@@ -74,7 +114,9 @@ const CreateServiceModal = ({
                 value={formData.category}
                 onChange={(e) => handleInputChange('category', e.target.value)}
               >
-                <option value="">Select Service category</option>
+                <option value="" disabled hidden>
+                  Select Service category
+                </option>
                 <option value="Cleaning">Cleaning</option>
                 <option value="Maintenance">Maintenance</option>
                 <option value="Landscaping">Landscaping</option>
@@ -82,6 +124,8 @@ const CreateServiceModal = ({
               </select>
             </div>
 
+
+            {/* 🔹 Title */}
             <div className="form-group">
               <label>Title</label>
               <input
@@ -93,6 +137,7 @@ const CreateServiceModal = ({
               />
             </div>
 
+            {/* 🔹 Description */}
             <div className="form-group">
               <label>Description</label>
               <textarea
@@ -104,6 +149,7 @@ const CreateServiceModal = ({
               ></textarea>
             </div>
 
+            {/* 🔹 Price */}
             <div className="form-group">
               <label>Price</label>
               <div className="price-input">
@@ -119,6 +165,7 @@ const CreateServiceModal = ({
               </div>
             </div>
 
+            {/* 🔹 Additional Services */}
             <div className="form-group">
               <label>Additional Services (Optional)</label>
               <div className="additional-services-input">
@@ -164,6 +211,7 @@ const CreateServiceModal = ({
               )}
             </div>
 
+            {/* 🔹 Discount */}
             <div className="form-group">
               <label>Discount (Optional)</label>
               <input
@@ -177,6 +225,7 @@ const CreateServiceModal = ({
               />
             </div>
 
+            {/* 🔹 Location */}
             <div className="form-group">
               <label>Location</label>
               <input
@@ -188,13 +237,19 @@ const CreateServiceModal = ({
               />
             </div>
 
+            {/* 🔹 Map Placeholder */}
             <div className="form-group">
               <label>Map</label>
               <div className="map-container">
-                <div className="map-placeholder">
-                  <FaMapMarkerAlt />
-                  <span>Map showing location</span>
-                </div>
+                <LoadScript googleMapsApiKey="YOUR_GOOGLE_API_KEY">
+                  <GoogleMap
+                    mapContainerStyle={containerStyle}
+                    center={center}
+                    zoom={12}
+                  >
+                    <Marker position={center} />
+                  </GoogleMap>
+                </LoadScript>
               </div>
             </div>
           </form>

@@ -95,18 +95,25 @@ const BookingFormModal = ({
                 <div className="section-title">Payment Method</div>
                 <div className="payment-list">
                   <label className="payment-item">
-                    <div>
+                    <div className="payment-item-content">
                       <img src="/image/doller.png" alt="cash" width={60} height={70} />
                       <span>Cash</span>
                     </div>
                     <input type="checkbox" name="pm" checked={paymentMethod === 'cash'} onChange={() => setPaymentMethod('cash')} />
                   </label>
                   <label className="payment-item">
-                    <span>Wallet</span>
+                    <div className="payment-item-content-wallet">
+                      <img src="/image/wallet.png" alt="cash" width={50} height={50} />
+                      <span>Wallet</span>
+                    </div>
                     <input type="checkbox" name="pm" checked={paymentMethod === 'wallet'} onChange={() => setPaymentMethod('wallet')} />
                   </label>
                   <label className="payment-item">
-                    <span>Visa - 0987</span>
+                  <div className="payment-item-content-visa">
+                      <img src="/image/visa.png" alt="cash" width={50} height={40} />
+                      <span>Visa - 0987</span>
+                    </div>
+                   
                     <input type="checkbox" name="pm" checked={paymentMethod === 'visa'} onChange={() => setPaymentMethod('visa')} />
                   </label>
                 </div>
